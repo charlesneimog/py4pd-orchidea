@@ -23,9 +23,16 @@ def py4pdLoadObjects():
     Load all the objects in pd.
     '''
     pd.addobject(orchideaConfig, "orchidea.config")
+
+    # Woodwinds
     pd.addobject(orchideaFlute, "orchidea.flute")
+
+    # Strings
     pd.addobject(orchideaViolin, "orchidea.violin")
+
+    # Brass
     pd.addobject(orchideaTrumpet, "orchidea.trumpet")
+    pd.addobject(orchideaHorn, "orchidea.horn")
 
 
 

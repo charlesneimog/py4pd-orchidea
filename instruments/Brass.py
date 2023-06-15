@@ -24,14 +24,14 @@ def orchideaTrumpet(note, dyn, orchideaNumber):
     '''
 
     Orchidea Trumpet: 
-        args:
+        Args:
             note: string "C4"
             dyn: string "mf"
             orchideaNumber: int 1-15
         
         Techniques:
 
-            No sordina:
+            Ordinary:
 
                 1. brassy (dynamic: ff)
                 2. flatterzunge (dynamic: pp, mf, ff)
@@ -115,7 +115,6 @@ def orchideaTrumpet(note, dyn, orchideaNumber):
         pathname = random.choice(pathnames)
         return pathname
     elif orchideaNumber == 7:
-        # TpC+SC-flatt-A4-mf-N-N
         pathname = os.path.join(ORCHIDEASOL_PATH, 'Brass/Trumpet_C+sordina_cup/flatterzunge/' + 'TpC+SC-flatt-' + note + f'-{dyn}*')
         pathnames = glob.glob(pathname)
         if pathnames == []:
@@ -194,3 +193,149 @@ def orchideaTrumpet(note, dyn, orchideaNumber):
         pd.error("orchideaTrumpet: wrong orchideaNumber must be between 1 and 15")
         return None
         
+
+def orchideaHorn(note, dyn, orchideaNumber):
+    '''
+    Orchidea Horn:
+    
+        Args:
+            note: string
+            dyn: string
+            orchideaNumber: int
+
+        Techniques:
+
+            Ordinary:
+
+                1. brassy (dynamic: ff)
+                2. flatterzunge (dynamic: pp, mf, ff)
+                3. flatterzunge stopped (dynamic: mf)
+                4. ordinario (dynamic: pp, mf, ff)
+                5. sforzato (dynamic: f, fp)
+                6. slap pitched (dynamic: p)
+                7. sttoped (dynamic: mf)
+
+            Sordina:
+                8. flatterzunge (dynamic: mf)
+                9. ordinario (dynamic: mf)
+    '''
+
+    if orchideaNumber == 1:
+        # not important the final of the file name
+        dynamics = ['ff']
+        if dyn not in dynamics:
+            pd.error("orchideaHorn: wrong dynamic for brassy, must be ff")
+            return None
+        pathname = os.path.join(ORCHIDEASOL_PATH, 'Brass/Horn/brassy/' + 'Hn-brassy-' + note + f'-{dyn}*')
+        # get the files that match the pathname
+        pathnames = glob.glob(pathname)
+        if pathnames == []:
+            pd.error("No pathnames found for brassy")
+            return None
+        pathname = random.choice(pathnames)
+        return pathname
+    elif orchideaNumber == 2:
+        dynamics = ['pp', 'mf', 'ff']
+        if dyn not in dynamics:
+            pd.error("orchideaHorn: wrong dynamic for flatterzunge, must be pp, mf or ff")
+            return None
+        pathname = os.path.join(ORCHIDEASOL_PATH, 'Brass/Horn/flatterzunge/' + 'Hn-flatt-' + note + f'-{dyn}*')
+        pathnames = glob.glob(pathname)
+        if pathnames == []:
+            pd.error("No pathnames found for flatterzunge")
+            return None
+        pathname = random.choice(pathnames)
+        return pathname
+    elif orchideaNumber == 3:
+        dynamics = ['mf']
+        if dyn not in dynamics:
+            pd.error("orchideaHorn: wrong dynamic for flatterzunge stopped, must be mf")
+            return None
+        pathname = os.path.join(ORCHIDEASOL_PATH, 'Brass/Horn/flatterzunge_stopped/' + 'Hn-flatt_stopped-' + note + f'-{dyn}*')
+        pathnames = glob.glob(pathname)
+        if pathnames == []:
+            pd.error("No pathnames found for flatterzunge stopped")
+            return None
+        pathname = random.choice(pathnames)
+        return pathname
+    elif orchideaNumber == 4:
+        dynamics = ['pp', 'mf', 'ff']
+        if dyn not in dynamics:
+            pd.error("orchideaHorn: wrong dynamic for ordinario, must be pp, mf or ff")
+            return None
+        pathname = os.path.join(ORCHIDEASOL_PATH, 'Brass/Horn/ordinario/' + 'Hn-ord-' + note + f'-{dyn}*')
+        pathnames = glob.glob(pathname)
+        if pathnames == []:
+            pd.error("No pathnames found for ordinario")
+            return None
+        pathname = random.choice(pathnames)
+        return pathname
+    elif orchideaNumber == 5:
+        dynamics = ['f', 'fp']
+        if dyn not in dynamics:
+            pd.error("orchideaHorn: wrong dynamic for sforzato, must be f or fp")
+            return None
+        pathname = os.path.join(ORCHIDEASOL_PATH, 'Brass/Horn/sforzato/' + 'Hn-sfz-' + note + f'-{dyn}*')
+        pathnames = glob.glob(pathname)
+        if pathnames == []:
+            pd.error("No pathnames found for sforzato")
+            return None
+        pathname = random.choice(pathnames)
+        return pathname
+    elif orchideaNumber == 6:
+        dynamics = ['mf']
+        if dyn not in dynamics:
+            pd.error("orchideaHorn: wrong dynamic for slap pitched, must be p")
+            return None
+        pathname = os.path.join(ORCHIDEASOL_PATH, 'Brass/Horn/slap_pitched/' + 'Hn-slap-' + note + f'-{dyn}*')
+        pathnames = glob.glob(pathname)
+        if pathnames == []:
+            pd.error("No pathnames found for slap pitched")
+            return None
+        pathname = random.choice(pathnames)
+        return pathname
+    elif orchideaNumber == 7:
+        dynamics = ['mf']
+        if dyn not in dynamics:
+            pd.error("orchideaHorn: wrong dynamic for stopped, must be mf")
+            return None
+        pathname = os.path.join(ORCHIDEASOL_PATH, 'Brass/Horn/stopped/' + 'Hn-stopped-' + note + f'-{dyn}*')
+        pathnames = glob.glob(pathname)
+        if pathnames == []:
+            pd.error("No pathnames found for stopped")
+            return None
+        pathname = random.choice(pathnames)
+        return pathname
+    elif orchideaNumber == 8:
+        dynamics = ['mf']
+        if dyn not in dynamics:
+            pd.error("orchideaHorn: wrong dynamic for flatterzunge, must be mf")
+            return None
+        pathname = os.path.join(ORCHIDEASOL_PATH, 'Brass/Horn+sordina/flatterzunge/' + 'Hn+S-flatt-' + note + f'-{dyn}*')
+        pathnames = glob.glob(pathname)
+        if pathnames == []:
+            pd.error("No pathnames found for flatterzunge")
+            return None
+        pathname = random.choice(pathnames)
+        return pathname
+    elif orchideaNumber == 9:
+        dynamics = ['mf']
+        if dyn not in dynamics:
+            pd.error("orchideaHorn: wrong dynamic for ordinario, must be mf")
+            return None
+        pathname = os.path.join(ORCHIDEASOL_PATH, 'Brass/Horn+sordina/ordinario/' + 'Hn+S-ord-' + note + f'-{dyn}*')
+        pathnames = glob.glob(pathname)
+        if pathnames == []:
+            pd.error("No pathnames found for ordinario")
+            return None
+        pathname = random.choice(pathnames)
+        return pathname
+
+        
+
+        
+        
+            
+
+
+
