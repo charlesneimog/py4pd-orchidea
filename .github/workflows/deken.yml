@@ -8,7 +8,7 @@ on:
         required: true
 
 jobs:
-  linux-build:
+  deken-upload:
     runs-on: ubuntu-latest
     timeout-minutes: 5
     steps:
@@ -49,10 +49,4 @@ jobs:
           cd deken/developer/
           ./deken upload *.dek
 
-      - name: Upload to Github
-        uses: actions/upload-artifact@v2
-        
-        with:
-          name: orchidea
-          path: deken/developer/*.dek
         
