@@ -42,6 +42,7 @@ jobs:
           cd deken/developer/
           ./deken install --self
           ./deken package orchidea -v ${{ github.event.inputs.LibraryVersion }} -n orchidea
+          ./deken upload *.dek
 
       - name: Upload to Github
         uses: actions/upload-artifact@v2
