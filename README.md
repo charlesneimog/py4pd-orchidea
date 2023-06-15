@@ -1,7 +1,7 @@
 # Orchidea 🌺
 
 <details>
-  <summary> ChatGPT readme, click to see the input.</summary>
+  <summary> Readme by ChatGPT, click to see the input.</summary>
 
 ``` 
 This is a readme, can you make it look more interesting:
