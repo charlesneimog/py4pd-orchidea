@@ -2,7 +2,7 @@ import pd
 import json
 from instruments.Brass import *
 from instruments.Strings import *
-from instruments.Woodwinds import *
+from instruments.Winds import *
 
 
 def orchideaConfig(path):
@@ -24,7 +24,7 @@ def py4pdLoadObjects():
     '''
     pd.addobject(orchideaConfig, "orchidea.config")
 
-    # Woodwinds
+    # Winds
     pd.addobject(orchideaFlute, "orchidea.flute")
 
     # Strings
