@@ -40,6 +40,7 @@ jobs:
       - name: Build and Upload Package
         run: |
           cd deken/developer/
+          ./deken install --self
           ./deken package orchidea -v ${{ github.event.inputs.LibraryVersion }} -n orchidea
 
       - name: Upload to Github
