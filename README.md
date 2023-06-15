@@ -6,9 +6,11 @@
 ``` 
 This is a readme, can you make it look more interesting:
 
-Load the OrchideaSol samples using pseudo-midi info. 
-
-This is one py4pd library for PureData. You need to use PureData and py4pd.
+"
+  Load the OrchideaSol samples using pseudo-midi info. 
+  
+  This is one py4pd library for PureData. You need to use PureData and py4pd.
+"
 
 ```
 
@@ -24,6 +26,7 @@ To dive into the magical realm of Orchidea, you'll need a couple of things:
 
 1. [PureData](http://puredata.info/downloads/pure-data) - Make sure you have this amazing tool installed to unleash the true potential of Orchidea.
 2. [py4pd](https://github.com/charlesneimog/py4pd) - This is the Python library that acts as a bridge between PureData and Orchidea. Install it and get ready for a thrilling adventure!
+3. [OrchideaSol](https://forum.ircam.fr/projects/detail/orchideasol/) - Download the Orchidea Sol Samples from Ircam website (It is free!).
 
 ## Installation
 
