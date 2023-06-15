@@ -30,6 +30,12 @@ jobs:
           cp -r orchidea.py deken/developer/orchidea/
           cp -r README.md deken/developer/orchidea/
 
+      - name: Set config for deken
+        run: |
+          mkdir -p ~/.deken && touch ~/.deken/config
+          echo "username = charlesneimog" >> ~/.deken/config
+          echo "password = ${{ secrets.DekenPassword }}" >> ~/.deken/config
+
       
       - name: Build and Upload Package
         run: |
@@ -38,6 +44,7 @@ jobs:
 
       - name: Upload to Github
         uses: actions/upload-artifact@v2
+        
         with:
           name: orchidea
           path: deken/developer/*.dek
