@@ -2,29 +2,29 @@ name: Deken Upload
 on:
   workflow_dispatch:
     inputs:
-    LibraryVersion:
-      description: 'Add the version for upload'
-      type: string
-      required: true
+      LibraryVersion:
+        description: 'Add the version for upload'
+        type: string
+        required: true
 
-jobs:  
+jobs:
   linux-build:
     runs-on: ubuntu-latest
-    timeout-minutes: 5 
+    timeout-minutes: 5
     steps:
       - uses: actions/checkout@v3
         with:
           submodules: recursive
           fetch-depth: 0
-      - uses: actions/setup-python@v4
+      - uses: actions/setup-python@v2
         with:
           python-version: '3.10'
-          
+
       - name: Install Deken
-        run: | 
+        run: |
           sudo apt install deken
-        	
+
       - name: Build and Upload Package
         run: |
-          deken package . -v 0.1.0 -n orchidea
-          
+          deken package . -v ${{ github.event.inputs.LibraryVersion }} -n orchidea
+          deken upload *.dek
