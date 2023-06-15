@@ -1,17 +1,16 @@
 # Orchidea 🌺
 
-![Orchidea logo](https://example.com/orchidea_logo.png)
-
 <details>
-  <summary>ChatGPT readme, click to see the input.</summary>
+  <summary> ChatGPT readme, click to see the input.</summary>
 
-this is a readme, can you make it look more interesting:
+``` 
+This is a readme, can you make it look more interesting:
 
-# Orchidea
+Load the OrchideaSol samples using pseudo-midi info. 
 
-Load the [OrchideaSol](https://forum.ircam.fr/projects/detail/orchideasol/) samples using pseudo-midi info. 
+This is one py4pd library for PureData. You need to use PureData and py4pd.
 
-This is one `py4pd` library for PureData. You need to use [PureData](http://puredata.info/downloads/pure-data) and [py4pd](https://github.com/charlesneimog/py4pd).
+```
 
 </details>
 
@@ -40,4 +39,3 @@ Once you have PureData and py4pd up and running, it's time to immerse yourself i
 import orchidea
 
 # Your Orchidea code goes here...
-
