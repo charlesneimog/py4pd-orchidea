@@ -17,12 +17,28 @@ jobs:
           submodules: recursive
           fetch-depth: 0
 
-      - name: Install Deken
+      - name: Download Deken
         run: |
-          sudo apt-get update -y
-          sudo apt-get install -y deken
+          git clone https://github.com/pure-data/deken.git
 
-      # - name: Build and Upload Package
-      #   run: |
-      #     deken package . -v ${{ github.event.inputs.LibraryVersion }} -n orchidea
-      #     deken upload *.dek
+      - name: Make Folder for Upload
+        run: |
+          mkdir deken/developer/orchidea
+          mkdir deken/developer/orchidea/instruments
+          cp -r instruments/ deken/developer/orchidea/
+          cp -r README.deken.pd deken/developer/orchidea/
+          cp -r orchidea.py deken/developer/orchidea/
+          cp -r README.md deken/developer/orchidea/
+
+      
+      - name: Build and Upload Package
+        run: |
+          cd deken/developer/
+          ./deken package orchidea -v ${{ github.event.inputs.LibraryVersion }} -n orchidea
+
+      - name: Upload to Github
+        uses: actions/upload-artifact@v2
+        with:
+          name: orchidea
+          path: deken/developer/orchidea/*.dek
+        
