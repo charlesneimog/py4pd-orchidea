@@ -6,9 +6,11 @@
 ``` 
 This is a readme, can you make it look more interesting:
 
-Load the OrchideaSol samples using pseudo-midi info. 
-
-This is one py4pd library for PureData. You need to use PureData and py4pd.
+"
+  Load the OrchideaSol samples using pseudo-midi info. 
+  
+  This is one py4pd library for PureData. You need to use PureData and py4pd.
+"
 
 ```
 
