@@ -40,5 +40,5 @@ jobs:
         uses: actions/upload-artifact@v2
         with:
           name: orchidea
-          path: deken/developer/orchidea/*.dek
+          path: deken/developer/*.dek
         
