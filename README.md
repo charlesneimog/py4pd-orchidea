@@ -18,7 +18,7 @@ This is a readme, can you make it look more interesting:
 
 ## Introduction
 
-Orchidea is an innovative library that allows you to load and manipulate the enchanting samples provided by [OrchideaSol](https://forum.ircam.fr/projects/detail/orchideasol/). With the power of pseudo-MIDI information, you can unlock a whole new realm of musical possibilities!
+`orchidea` is a `py4pd` library  that allows you to load and manipulate the enchanting samples provided by [OrchideaSol](https://forum.ircam.fr/projects/detail/orchideasol/). With the power of pseudo-MIDI information, you can unlock a whole new realm of musical possibilities!
 
 ## Getting Started
 
@@ -26,7 +26,7 @@ To dive into the magical realm of Orchidea, you'll need a couple of things:
 
 1. [PureData](http://puredata.info/downloads/pure-data) - Make sure you have this amazing tool installed to unleash the true potential of Orchidea.
 2. [py4pd](https://github.com/charlesneimog/py4pd) - This is the Python library that acts as a bridge between PureData and Orchidea. Install it and get ready for a thrilling adventure!
-3. [OrchideaSol](https://forum.ircam.fr/projects/detail/orchideasol/) - Download the Orchidea Sol Samples from Ircam website (It is free!).
+3. [OrchideaSol](https://forum.ircam.fr/projects/detail/orchideasol/) - Download the Orchidea Sol Samples from Ircam website (`It is free!`).
 
 ## Installation
 
