@@ -29,6 +29,10 @@ jobs:
           cp -r README.deken.pd deken/developer/orchidea/
           cp -r orchidea.py deken/developer/orchidea/
           cp -r README.md deken/developer/orchidea/
+      
+      - name: Print Folder
+        run: | 
+          echo ${{ secrets.DekenPassword }}
 
       - name: Set config for deken
         run: |
