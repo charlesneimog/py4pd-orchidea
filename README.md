@@ -27,15 +27,10 @@ To dive into the magical realm of Orchidea, you'll need a couple of things:
 
 ## Installation
 
-1. First, install PureData by following the instructions provided on their official website: [PureData Downloads](http://puredata.info/downloads/pure-data).
-2. Next, grab the py4pd library from its repository on GitHub: [py4pd on GitHub](https://github.com/charlesneimog/py4pd).
-3. Install py4pd by following the installation instructions provided in its repository.
+1. First, install `PureData` by following the instructions provided on their official website: [PureData Downloads](http://puredata.info/downloads/pure-data).
+2. Next, grab the `py4pd` library from its repository on GitHub: [py4pd on GitHub](https://github.com/charlesneimog/py4pd).
+3. Install `py4pd` by following the installation instructions provided in its repository.
 
 ## Usage
 
-Once you have PureData and py4pd up and running, it's time to immerse yourself in the wondrous world of Orchidea. Use the provided pseudo-MIDI information to load and manipulate the delightful samples provided by OrchideaSol. Unleash your creativity and let the melodies bloom!
-
-```python
-import orchidea
-
-# Your Orchidea code goes here...
+Once you have PureData and `py4pd` up and running, it's time to immerse yourself in the wondrous world of Orchidea. Use the provided pseudo-MIDI information to load and manipulate the delightful samples provided by OrchideaSol. Unleash your creativity and let the melodies bloom!
