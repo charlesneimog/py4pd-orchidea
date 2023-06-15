@@ -36,7 +36,6 @@ jobs:
           echo "username = ${{ secrets.DekenUsername }}" >> ~/.deken/config
           echo "password = ${{ secrets.DekenPassword }}" >> ~/.deken/config
 
-      
       - name: Build and Upload Package
         run: |
           cd deken/developer/
