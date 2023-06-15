@@ -15,9 +15,6 @@ This is one `py4pd` library for PureData. You need to use [PureData](http://pure
 
 </details>
 
-
-Welcome to Orchidea, a mesmerizing world of sound exploration! 🎵🌈 
-
 ## Introduction
 
 Orchidea is an innovative library that allows you to load and manipulate the enchanting samples provided by [OrchideaSol](https://forum.ircam.fr/projects/detail/orchideasol/). With the power of pseudo-MIDI information, you can unlock a whole new realm of musical possibilities!
