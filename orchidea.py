@@ -33,6 +33,7 @@ def py4pdLoadObjects():
     # Brass
     pd.addobject(orchideaTrumpet, "orchidea.trumpet")
     pd.addobject(orchideaHorn, "orchidea.horn")
+    pd.addobject(orchideaTrombone, "orchidea.trombone")
 
 
 

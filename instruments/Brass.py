@@ -331,7 +331,260 @@ def orchideaHorn(note, dyn, orchideaNumber):
         pathname = random.choice(pathnames)
         return pathname
 
-        
+
+def orchideaTrombone(note, dyn, orchideaNumber):    
+    '''
+
+    Orchidea Trombone:
+    
+        Args:
+            note: string
+            dyn: string
+            orchideaNumber: int
+
+        Techniques:
+
+            Ordinary:   
+
+                1. brassy (dynamic: ff)
+                2. flatterzunge (dynamic: pp, mf, ff)
+                3. flatterzunge no mouthpiece (dynamic: p, f) | Just C#5, D5.
+                4. ordinario (dynamic: pp, mf, ff)
+                5. pedal tone (dynamic: p, f)
+                6. sforzato (dynamic: f, fp)
+                7. slap_pitched (dynamic: p)
+
+            Sordina Cup:
+                8. flatterzunge (dynamic: mf)
+                9. ordinario (dynamic: mf)
+
+            Sordina Harmon:
+                10. flatterzunge (dynamic: mf)
+                11. ordinario (dynamic: mf)
+
+            Sordina Straight:
+                12. flatterzunge (dynamic: mf)
+                13. ordinario (dynamic: mf)
+
+            Sordina Wah:
+                14: flatterzunge closed (dynamic: mf)
+                15: flattezunge open (dynamic: mf)
+                16: ordinario closed (dynamic: mf)
+                17: ordinario open (dynamic: mf)
+    '''
+    if orchideaNumber == 1:
+        dynamics = ['ff']
+        if dyn not in dynamics:
+            pd.error("orchideaTrombone: wrong dynamic for brassy, must be ff")
+            return None
+        pathname = os.path.join(ORCHIDEASOL_PATH, 'Brass/Trombone/brassy/' + 'Tbn-brassy-' + note + f'-{dyn}*')
+        pathnames = glob.glob(pathname)
+        if pathnames == []:
+            pd.error("No pathnames found for brassy")
+            return None
+        pathname = random.choice(pathnames)
+        return pathname
+    elif orchideaNumber == 2:
+        dynamics = ['pp', 'mf', 'ff']
+        if dyn not in dynamics:
+            pd.error("orchideaTrombone: wrong dynamic for flatterzunge, must be pp, mf or ff")
+            return None
+        pathname = os.path.join(ORCHIDEASOL_PATH, 'Brass/Trombone/flatterzunge/' + 'Tbn-flatt-' + note + f'-{dyn}*')
+        pathnames = glob.glob(pathname)
+        if pathnames == []:
+            pd.error("No pathnames found for flatterzunge")
+            return None
+        pathname = random.choice(pathnames)
+        return pathname
+    elif orchideaNumber == 3:
+        dynamics = ['p', 'f']
+        if dyn not in dynamics:
+            pd.error("orchideaTrombone: wrong dynamic for flatterzunge no mouthpiece, must be p or f")
+            return None
+        pathname = os.path.join(ORCHIDEASOL_PATH, 'Brass/Trombone/flatterzunge_no_mouthpiece/' + 'Tbn-flatt-no-mouthpiece-' + note + f'-{dyn}*')
+        pathnames = glob.glob(pathname)
+        if pathnames == []:
+            pd.error("No pathnames found for flatterzunge no mouthpiece")
+            return None
+        pathname = random.choice(pathnames)
+        return pathname
+
+    elif orchideaNumber == 4:
+        dynamics = ['pp', 'mf', 'ff']
+        if dyn not in dynamics:
+            pd.error("orchideaTrombone: wrong dynamic for ordinario, must be pp, mf or ff")
+            return None
+        pathname = os.path.join(ORCHIDEASOL_PATH, 'Brass/Trombone/ordinario/' + 'Tbn-ord-' + note + f'-{dyn}*')
+        pathnames = glob.glob(pathname)
+        if pathnames == []:
+            pd.error("No pathnames found for ordinario")
+            return None
+        pathname = random.choice(pathnames)
+        return pathname
+    elif orchideaNumber == 5:
+        dynamics = ['p', 'f']
+        if dyn not in dynamics:
+            pd.error("orchideaTrombone: wrong dynamic for pedal tone, must be p or f")
+            return None
+        pathname = os.path.join(ORCHIDEASOL_PATH, 'Brass/Trombone/pedal_tone/' + 'Tbn-pedal-tone-' + note + f'-{dyn}*')
+        pathnames = glob.glob(pathname)
+        if pathnames == []:
+            pd.error("No pathnames found for pedal tone")
+            return None
+        pathname = random.choice(pathnames)
+        return pathname
+    elif orchideaNumber == 6:
+        dynamics = ['f', 'fp']
+        if dyn not in dynamics:
+            pd.error("orchideaTrombone: wrong dynamic for sforzato, must be f or fp")
+            return None
+        pathname = os.path.join(ORCHIDEASOL_PATH, 'Brass/Trombone/sforzato/' + 'Tbn-sforzato-' + note + f'-{dyn}*')
+        pathnames = glob.glob(pathname)
+        if pathnames == []:
+            pd.error("No pathnames found for sforzato")
+            return None
+        pathname = random.choice(pathnames)
+        return pathname
+    elif orchideaNumber == 7:
+        dynamics = ['p']
+        if dyn not in dynamics:
+            pd.error("orchideaTrombone: wrong dynamic for slap_pitched, must be p")
+            return None
+        pathname = os.path.join(ORCHIDEASOL_PATH, 'Brass/Trombone/slap_pitched/' + 'Tbn-slap-pitched-' + note + f'-{dyn}*')
+        pathnames = glob.glob(pathname)
+        if pathnames == []:
+            pd.error("No pathnames found for slap_pitched")
+            return None
+        pathname = random.choice(pathnames)
+        return pathname
+    elif orchideaNumber == 8:
+        dynamics = ['mf']
+        if dyn not in dynamics:
+            pd.error("orchideaTrombone: wrong dynamic for sordina cup flatterzunge, must be mf")
+            return None
+        pathname = os.path.join(ORCHIDEASOL_PATH, 'Brass/Trombone/sordina_cup/flatterzunge/' + 'Tbn+SC-flatt-' + note + f'-{dyn}*')
+        pathnames = glob.glob(pathname)
+        if pathnames == []:
+            pd.error("No pathnames found for sordina cup flatterzunge")
+            return None
+        pathname = random.choice(pathnames)
+        return pathname
+    elif orchideaNumber == 9:
+        dynamics = ['mf']
+        if dyn not in dynamics:
+            pd.error("orchideaTrombone: wrong dynamic for sordina cup ordinario, must be mf")
+            return None
+        pathname = os.path.join(ORCHIDEASOL_PATH, 'Brass/Trombone+sordina_cup/ordinario/' + 'Tbn+SC-ord-' + note + f'-{dyn}*')
+        pathnames = glob.glob(pathname)
+        if pathnames == []:
+            pd.error("No pathnames found for sordina cup ordinario")
+            return None
+        pathname = random.choice(pathnames)
+        return pathname
+    elif orchideaNumber == 10:
+        dynamics = ['mf']
+        if dyn not in dynamics:
+            pd.error("orchideaTrombone: wrong dynamic for sordina cup pedal tone, must be mf")
+            return None
+        pathname = os.path.join(ORCHIDEASOL_PATH, 'Brass/Trombone+sordina_harmon/flatterzunge/' + 'Tbn+SH-flatt-' + note + f'-{dyn}*')
+        pathnames = glob.glob(pathname)
+        if pathnames == []:
+            pd.error("No pathnames found for sordina cup pedal tone")
+            return None
+        pathname = random.choice(pathnames)
+        return pathname
+    elif orchideaNumber == 11:
+        dynamics = ['mf']
+        if dyn not in dynamics:
+            pd.error("orchideaTrombone: wrong dynamic for sordina cup pedal tone, must be mf")
+            return None
+        pathname = os.path.join(ORCHIDEASOL_PATH, 'Brass/Trombone+sordina_harmon/ordinario/' + 'Tbn+SH-ord-' + note + f'-{dyn}*')
+        pathnames = glob.glob(pathname)
+        if pathnames == []:
+            pd.error("No pathnames found for sordina harmon")
+            return None
+        pathname = random.choice(pathnames)
+        return pathname
+    elif orchideaNumber == 12:
+        dynamics = ['mf']
+        if dyn not in dynamics:
+            pd.error("orchideaTrombone: wrong dynamic for sordina harmon pedal tone, must be mf")
+            return None
+        # Trombone+sordina_straight
+        pathname = os.path.join(ORCHIDEASOL_PATH, 'Brass/Trombone+sordina_straight/flatterzunge/' + 'Tbn+SS-flatt-' + note + f'-{dyn}*')
+        pathnames = glob.glob(pathname)
+        if pathnames == []:
+            pd.error("No pathnames found for sordina harmon pedal tone")
+            return None
+        pathname = random.choice(pathnames)
+        return pathname
+    elif orchideaNumber == 13:
+        dynamics = ['mf']
+        if dyn not in dynamics:
+            pd.error("orchideaTrombone: wrong dynamic for sordina harmon pedal tone, must be mf")
+            return None
+        pathname = os.path.join(ORCHIDEASOL_PATH, 'Brass/Trombone+sordina_straight/ordinario/' + 'Tbn+SS-ord-' + note + f'-{dyn}*')
+        pathnames = glob.glob(pathname)
+        if pathnames == []:
+            pd.error("No pathnames found for sordina straight")
+            return None
+        pathname = random.choice(pathnames)
+        return pathname
+    elif orchideaNumber == 14:
+        dynamics = ['mf']
+        if dyn not in dynamics:
+            pd.error("orchideaTrombone: wrong dynamic for sordina straight pedal tone, must be mf")
+            return None
+        pathname = os.path.join(ORCHIDEASOL_PATH, 'Brass/Trombone+sordina_wah/flatterzunge_closed/' + 'Tbn+SW-flatt_closed-' + note + f'-{dyn}*')
+        pathnames = glob.glob(pathname)
+        if pathnames == []:
+            pd.error("No pathnames found for sordina straight pedal tone")
+            return None
+        pathname = random.choice(pathnames)
+        return pathname
+    elif orchideaNumber == 15:
+        pathname = os.path.join(ORCHIDEASOL_PATH, 'Brass/Trombone+sordina_wah/flatterzunge_open/' + 'Tbn+SW-flatt_open-' + note + f'-{dyn}*')
+        pathnames = glob.glob(pathname)
+        if pathnames == []:
+            pd.error("No pathnames found for sordina straight pedal tone")
+            return None
+        pathname = random.choice(pathnames)
+        return pathname
+    elif orchideaNumber == 16:
+        # ordinario_closed
+        dynamics = ['mf']
+        if dyn not in dynamics:
+            pd.error("orchideaTrombone: wrong dynamic for sordina straight pedal tone, must be mf")
+            return None
+        pathname = os.path.join(ORCHIDEASOL_PATH, 'Brass/Trombone+sordina_wah/ordinario_closed/' + 'Tbn+SW-ord_closed-' + note + f'-{dyn}*')
+        pathnames = glob.glob(pathname)
+        if pathnames == []:
+            pd.error("No pathnames found for sordina straight pedal tone")
+            return None
+        pathname = random.choice(pathnames)
+        return pathname
+    elif orchideaNumber == 17:
+        dynamics = ['mf']
+        if dyn not in dynamics:
+            pd.error("orchideaTrombone: wrong dynamic for sordina straight pedal tone, must be mf")
+            return None
+        pathname = os.path.join(ORCHIDEASOL_PATH, 'Brass/Trombone+sordina_wah/ordinario_open/' + 'Tbn+SW-ord_open-' + note + f'-{dyn}*')
+        pathnames = glob.glob(pathname)
+        if pathnames == []:
+            pd.error("No pathnames found for sordina straight pedal tone")
+            return None
+        pathname = random.choice(pathnames)
+        return pathname
+    else:
+        pd.error("orchideaTrombone: wrong orchidea number")
+        return None
+
+
+
+
+
+
+    
 
         
         
