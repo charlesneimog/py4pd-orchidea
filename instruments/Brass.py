@@ -580,6 +580,251 @@ def orchideaTrombone(note, dyn, orchideaNumber):
         return None
 
 
+def orchideaTuba(note, dyn, orchideaNumber):    
+    '''
+
+    Orchidea Tuba:
+    
+        Args:
+            note: string
+            dyn: string
+            orchideaNumber: int
+
+        Techniques:
+
+            Ordinary:   
+
+                1. bisbigliando (dynamic: mf)
+                2. blow (dynamic: p) - unpitched
+                3. brazzy (dynamic: ff) - C#4, D4, D#4
+                4. breath (dynamic: pp) - unpitched
+                5. discolored_fingering (dynamic: p - pp)
+                6. flatterzunge (dynamic: pp, mf)
+                7. growl (dynamic: mf, ff) - unpitched
+                8. kiss (dynamic: f) - unpitched
+                9. ordinario (dynamic: pp, mf, ff)
+                10. ordinario_high_register (dynamic: p, mf, ff)
+                11. pedal_tone (dynamic: pp, mf, ff)
+                12. sforzato (dynamic: fp)
+                13. single_tonguing (dynamic: mf)
+                14. slap_pitched (dynamic: mf, f, ff)
+                15. slap_unpitched (dynamic: mf, f)
+
+
+            Sordina:
+                16. ordinario (dynamic: p, f)
+
+    '''
+    if orchideaNumber == 1:
+        dynamics = ['mf']
+        if dyn not in dynamics:
+            pd.error("orchideaTuba: wrong dynamic for bisbigliando, must be mf")
+            return None
+        pathname = os.path.join(ORCHIDEASOL_PATH, 'Brass/Bass_Tuba/bisbigliando/' + 'BTb-bisb-' + note + f'-{dyn}*')
+        pathnames = glob.glob(pathname)
+        if pathnames == []:
+            pd.error("No pathnames found for bisbigliando")
+            return None
+        pathname = random.choice(pathnames)
+        return pathname
+    elif orchideaNumber == 2:
+        pathname = os.path.join(ORCHIDEASOL_PATH, 'Brass/Bass_Tuba/blow/' + 'BTb-blow*')
+        pathnames = glob.glob(pathname)
+        if pathnames == []:
+            pd.error("No pathnames found for blow")
+            return None
+        pathname = random.choice(pathnames)
+        return pathname
+    elif orchideaNumber == 3:
+        if note not in ['C#4', 'D4', 'D#4']:
+            pd.error("orchideaTuba: wrong note for brazzy, must be C#4, D4 or D#4")
+            return None
+        dynamics = ['ff']
+        if dyn not in dynamics:
+            pd.error("orchideaTuba: wrong dynamic for brazzy, must be ff")
+            return None
+        # BTb-brassy-C#4-ff-N-T23u
+        pathname = os.path.join(ORCHIDEASOL_PATH, 'Brass/Bass_Tuba/brazzy/' + 'BTb-brassy-' + note + f'-{dyn}*')
+        pathnames = glob.glob(pathname)
+        if pathnames == []:
+            pd.error("No pathnames found for brazzy")
+            return None
+        pathname = random.choice(pathnames)
+        return pathname
+    elif orchideaNumber == 4:
+        pathname = os.path.join(ORCHIDEASOL_PATH, 'Brass/Bass_Tuba/breath/' + 'BTb-breath*')
+        pathnames = glob.glob(pathname)
+        if pathnames == []:
+            pd.error("No pathnames found for blow")
+            return None
+        pathname = random.choice(pathnames)
+        return pathname
+    elif orchideaNumber == 5:
+        dynamics = ['p', 'pp']
+        if dyn not in dynamics:
+            pd.error("orchideaTuba: wrong dynamic for discolored_fingering, must be p or pp")
+            return None
+        # BTb-dsclrd_fngr-A#3-p-N-N
+        pathname = os.path.join(ORCHIDEASOL_PATH, 'Brass/Bass_Tuba/discolored_fingering/' + 'BTb-dsclrd_fngr-' + note + f'-{dyn}*')
+        pathnames = glob.glob(pathname)
+        if pathnames == []:
+            pd.error("No pathnames found for discolored_fingering")
+            return None
+        pathname = random.choice(pathnames)
+        return pathname
+    elif orchideaNumber == 6:
+        dynamics = ['pp', 'mf']
+        if dyn not in dynamics:
+            pd.error("orchideaTuba: wrong dynamic for flatterzunge, must be pp or mf")
+            return None
+        pathname = os.path.join(ORCHIDEASOL_PATH, 'Brass/Bass_Tuba/flatterzunge/' + 'BTb-flatt-' + note + f'-{dyn}*')
+        pathnames = glob.glob(pathname)
+        if pathnames == []:
+            pd.error("No pathnames found for flatterzunge")
+            return None
+        pathname = random.choice(pathnames)
+        return pathname
+    elif orchideaNumber == 7:
+        dynamics = ['mf', 'ff']
+        if dyn not in dynamics:
+            pd.error("orchideaTuba: wrong dynamic for growl, must be mf or ff")
+            return None
+        pathname = os.path.join(ORCHIDEASOL_PATH, 'Brass/Bass_Tuba/growl/' + 'BTb-growl-N-' + f'{dyn}*')
+        pathnames = glob.glob(pathname)
+        if pathnames == []:
+            pd.error("No pathnames found for growl")
+            return None
+        pathname = random.choice(pathnames)
+        return pathname
+    elif orchideaNumber == 8:
+        dynamics = ['f']
+        if dyn not in dynamics:
+            pd.error("orchideaTuba: wrong dynamic for kiss, must be f")
+            return None
+        pathname = os.path.join(ORCHIDEASOL_PATH, 'Brass/Bass_Tuba/kiss/' + 'BTb-kiss-N-' + f'{dyn}*')
+        pathnames = glob.glob(pathname)
+        if pathnames == []:
+            pd.error("No pathnames found for kiss")
+            return None
+        pathname = random.choice(pathnames)
+        return pathname
+    elif orchideaNumber == 9:
+        dynamics = ['pp', 'mf', 'ff']
+        if dyn not in dynamics:
+            pd.error("orchideaTuba: wrong dynamic for ordinario, must be pp, mf or ff")
+            return None
+        pathname = os.path.join(ORCHIDEASOL_PATH, 'Brass/Bass_Tuba/ordinario/' + 'BTb-ord-' + note + f'-{dyn}*')
+        pathnames = glob.glob(pathname)
+        if pathnames == []:
+            pd.error("No pathnames found for ordinario")
+            return None
+        pathname = random.choice(pathnames)
+        return pathname
+    elif orchideaNumber == 10:
+        dynamics = ['p', 'mf', 'ff']
+        if dyn not in dynamics:
+            pd.error("orchideaTuba: wrong dynamic for ordinario_high_register, must be p, mf or ff")
+            return None
+        pathname = os.path.join(ORCHIDEASOL_PATH, 'Brass/Bass_Tuba/ordinario_high_register/' + 'BTb-ord_hi_reg-' + note + f'-{dyn}*')
+        pathnames = glob.glob(pathname)
+        if pathnames == []:
+            pd.error("No pathnames found for ordinario_high_register")
+            return None
+        pathname = random.choice(pathnames)
+        return pathname
+    elif orchideaNumber == 11:
+        dynamics = ['p', 'mf', 'ff']
+        if dyn not in dynamics:
+            pd.error("orchideaTuba: wrong dynamic for pedal_tone, must be p, mf or ff")
+            return None
+        pathname = os.path.join(ORCHIDEASOL_PATH, 'Brass/Bass_Tuba/pedal_tone/BTb-pdl_tone-' + note + f'-{dyn}*')
+        pathnames = glob.glob(pathname)
+        if pathnames == []:
+            pd.error("No pathnames found for pedal_tone")
+            return None
+        pathname = random.choice(pathnames)
+        return pathname
+    elif orchideaNumber == 12:
+        dynamics = ['fp']
+        if dyn not in dynamics:
+            pd.error("orchideaTuba: wrong dynamic for sforzato, must be fp")
+            return None
+        pathname = os.path.join(ORCHIDEASOL_PATH, 'Brass/Bass_Tuba/sforzato/' + 'BTb-sfz-' + note + f'-{dyn}*')
+        pathnames = glob.glob(pathname)
+        if pathnames == []:
+            pd.error("No pathnames found for sforzato")
+            return None
+        pathname = random.choice(pathnames)
+        return pathname
+    elif orchideaNumber == 13:
+        dynamics = ['mf']
+        if dyn not in dynamics:
+            pd.error("orchideaTuba: wrong dynamic for single tonguing, must be mf")
+            return None
+        pathname = os.path.join(ORCHIDEASOL_PATH, 'Brass/Bass_Tuba/single_tonguing/' + 'BTb-sngl_tng-' + note + f'-{dyn}*')
+        pathnames = glob.glob(pathname)
+        if pathnames == []:
+            pd.error("No pathnames found for single tonguing")
+            return None
+        pathname = random.choice(pathnames)
+        return pathname
+    elif orchideaNumber == 14:
+        dynamics = ['mf', 'f', 'ff']
+        if dyn not in dynamics:
+            pd.error("orchideaTuba: wrong dynamic for slap_pitched, must be mf or ff")
+            return None
+        pathname = os.path.join(ORCHIDEASOL_PATH, 'Brass/Bass_Tuba/slap_pitched/' + 'BTb-slap-' + note + '*')
+        pathnames = glob.glob(pathname)
+        if pathnames == []:
+            pd.error("No pathnames found for slap_pitched")
+            return None
+        # check if there is the dynamic in the pathname
+        pathnames = [path for path in pathnames if dyn in path]
+        if pathnames == []:
+            pd.error("No pathnames found for slap_pitched with the right dynamic")
+            return None
+        pathname = random.choice(pathnames)
+        return pathname
+    elif orchideaNumber == 15:
+        dynamics = ['mf', 'f']
+        if dyn not in dynamics:
+            pd.error("orchideaTuba: wrong dynamic for slap_unpitched, must be mf or ff")
+            return None
+        pathname = os.path.join(ORCHIDEASOL_PATH, 'Brass/Bass_Tuba/slap_unpitched/' + 'BTb-slap_unp-N-*')
+        pathnames = glob.glob(pathname)
+        if pathnames == []:
+            pd.error("No pathnames found for slap_unpitched")
+            return None
+        pathnames = [path for path in pathnames if dyn in path]
+        if pathnames == []:
+            pd.error("No pathnames found for slap_unpitched with the right dynamic")
+            return None
+        pathname = random.choice(pathnames)
+        return pathname
+    elif orchideaNumber == 16:
+        dynamics = ['p', 'f']
+        if dyn not in dynamics:
+            pd.error("orchideaTuba: wrong dynamic for tongue_stop, must be p or f")
+            return None
+        pathname = os.path.join(ORCHIDEASOL_PATH, 'Brass/Bass_Tuba+sordina/ordinario/' + 'BTb+S-ord-' + note + f'-{dyn}*')
+        pathnames = glob.glob(pathname)
+        if pathnames == []:
+            pd.error("No pathnames found for tongue_stop")
+            return None
+        pathname = random.choice(pathnames)
+        return pathname
+    else:
+        pd.error("orchideaTuba: wrong orchideaNumber, must be between 1 and 16")
+        return None
+
+
+
+
+
+
+
+
+
 
 
 
