@@ -4,6 +4,7 @@ from instruments.Brass import *
 from instruments.Keyboards import *
 from instruments.Strings import *
 from instruments.Winds import *
+from instruments.PluckedStrings import *
 
 
 def orchideaConfig(path):
@@ -28,6 +29,9 @@ def py4pdLoadObjects():
 
     # Keyboards
     pd.addobject(orchideaAccordion, "orchidea.accordion")
+
+    # PluckedStrings
+    pd.addobject(orchideaGuitar, "orchidea.guitar")
 
     # Winds
     pd.addobject(orchideaFlute, "orchidea.flute")
