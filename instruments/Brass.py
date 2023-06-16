@@ -582,18 +582,14 @@ def orchideaTrombone(note, dyn, orchideaNumber):
 
 def orchideaTuba(note, dyn, orchideaNumber):    
     '''
-
     Orchidea Tuba:
-    
         Args:
             note: string
             dyn: string
             orchideaNumber: int
 
         Techniques:
-
             Ordinary:   
-
                 1. bisbigliando (dynamic: mf)
                 2. blow (dynamic: p) - unpitched
                 3. brazzy (dynamic: ff) - C#4, D4, D#4
@@ -610,10 +606,8 @@ def orchideaTuba(note, dyn, orchideaNumber):
                 14. slap_pitched (dynamic: mf, f, ff)
                 15. slap_unpitched (dynamic: mf, f)
 
-
             Sordina:
                 16. ordinario (dynamic: p, f)
-
     '''
     if orchideaNumber == 1:
         dynamics = ['mf']

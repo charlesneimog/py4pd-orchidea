@@ -1,6 +1,7 @@
 import pd
 import json
 from instruments.Brass import *
+from instruments.Keyboards import *
 from instruments.Strings import *
 from instruments.Winds import *
 
@@ -22,7 +23,11 @@ def py4pdLoadObjects():
     '''
     Load all the objects in pd.
     '''
+    # Geral
     pd.addobject(orchideaConfig, "orchidea.config")
+
+    # Keyboards
+    pd.addobject(orchideaAccordion, "orchidea.accordion")
 
     # Winds
     pd.addobject(orchideaFlute, "orchidea.flute")
