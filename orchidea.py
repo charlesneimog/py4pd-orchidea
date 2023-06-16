@@ -32,6 +32,7 @@ def py4pdLoadObjects():
 
     # PluckedStrings
     pd.addobject(orchideaGuitar, "orchidea.guitar")
+    pd.addobject(orchideaHarp, "orchidea.harp")
 
     # Winds
     pd.addobject(orchideaFlute, "orchidea.flute")
