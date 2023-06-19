@@ -698,6 +698,293 @@ def orchideaViola(note, dyn, orchideaNumber):
             
 
 
+def orchideaCello(note, dyn, orchideaNumber):
+    '''
+    Orchidea Cello: 
+        Args:
+            note: string "A4"
+            dyn: string "mf"
+            orchideaNumber: int 1-15
+
+        Techniques:
+            Ordinario:
+                1. artificial_harmonic
+                2. artificial_harmonic_tremolo
+                3. behind_the_bridge
+                4. col_legno_battuno
+                5. col_legno_tratto
+                6. ordinario
+                7. pizzicato_bartok
+                8. pizzicato_l_vib
+                9. pizzacto_secco
+                10. sforzato
+                11. sul_ponticello
+                12. sul_ponticello_tremolo
+                13. sul_tasto_tremolo
+                14. tremolo
+
+            Violoncello+sordina
+                15. ordinario
+                16. tremolo
+
+            Violoncello+sordina_piombo
+                17. ordinario
+                18. tremolo
 
 
-        
+    '''
+    string = pd.getkey('string')
+
+    if orchideaNumber == 1:
+        dynamics = ['mf']
+        if dyn not in dynamics:
+            pd.error("Wrong dynamic, must be mf.")
+            return None
+        # Vc-art_harm-G4-mf-3c-N
+        pathname = os.path.join(ORCHIDEASOL_PATH, 'Strings/Violoncello/artificial_harmonic/' + 'Vc-art_harm-' + note + '-' + dyn + '*')
+        pathnames = glob.glob(pathname)
+        if pathnames == []:
+            pd.error("Sample not found.")
+            return None
+        if string is not None: 
+            pathnames = [path for path in pathnames if string in path]
+        else:
+            pd.logpost(3, "I recommend to send one message with string [1, 2, 3, 4] to select the string.")
+            pd.logpost(3, "send 'key string 1' to select the string 1")
+        return random.choice(pathnames)
+    elif orchideaNumber == 2:
+        dynamics = ['mf']
+        if dyn not in dynamics:
+            pd.error("Wrong dynamic, must be mf.")
+            return None
+        # Vc-art_harm_trem-G4-mf-3c-N
+        pathname = os.path.join(ORCHIDEASOL_PATH, 'Strings/Violoncello/artificial_harmonic_tremolo/' + 'Vc-art_harm_trem-' + note + '-' + dyn + '*')
+        pathnames = glob.glob(pathname)
+        if pathnames == []:
+            pd.error("Sample not found.")
+            return None
+        if string is not None:
+            pathnames = [path for path in pathnames if string in path]
+        else:
+            pd.logpost(3, "I recommend to send one message with string [1, 2, 3, 4] to select the string.")
+            pd.logpost(3, "send 'key string 1' to select the string 1")
+        return random.choice(pathnames)
+    elif orchideaNumber == 3:
+        pathname = os.path.join(ORCHIDEASOL_PATH, 'Strings/Violoncello/behind_the_bridge/' + 'Vc-behind_bridge-N-N*')
+        pathnames = glob.glob(pathname)
+        if pathnames == []:
+            pd.error("Sample not found.")
+            return None
+        if string is not None:
+            pathnames = [path for path in pathnames if string in path]
+        return random.choice(pathnames)
+    elif orchideaNumber == 4:
+        dynamics = ['mf']
+        pathname = os.path.join(ORCHIDEASOL_PATH, 'Strings/Violoncello/col_legno_battuto/' + 'Vc-legno_batt-' + note + '-' + dyn + '*')
+        pathnames = glob.glob(pathname)
+        if pathnames == []:
+            pd.error("Sample not found.")
+            return None
+        if string is not None:
+            pathnames = [path for path in pathnames if string in path]
+        return random.choice(pathnames)
+    elif orchideaNumber == 5:
+        dynamics = ['mf']
+        pathname = os.path.join(ORCHIDEASOL_PATH, 'Strings/Violoncello/col_legno_tratto/' + 'Vc-legno_tratto-' + note + '-' + dyn + '*')
+        pathnames = glob.glob(pathname)
+        if pathnames == []:
+            pd.error("Sample not found.")
+            return None
+        if string is not None:
+            pathnames = [path for path in pathnames if string in path]
+        return random.choice(pathnames)
+    elif orchideaNumber == 6:
+        dynamics = ['pp', 'mf', 'ff']
+        pathname = os.path.join(ORCHIDEASOL_PATH, 'Strings/Violoncello/ordinario/' + 'Vc-ord-' + note + '-' + dyn + '*')
+        pathnames = glob.glob(pathname)
+        if pathnames == []:
+            pd.error("Sample not found.")
+            return None
+        if string is not None:
+            pathnames = [path for path in pathnames if string in path]
+        return random.choice(pathnames)
+    elif orchideaNumber == 7:
+        dynamics = ['ff']
+        if dyn not in dynamics:
+            pd.error("Wrong dynamic, must be ff.")
+            return None
+        pathname = os.path.join(ORCHIDEASOL_PATH, 'Strings/Violoncello/pizzicato_bartok/' + 'Vc-pizz_bartok-' + note + '-' + dyn + '*')
+        pathnames = glob.glob(pathname)
+        if pathnames == []:
+            pd.error("Sample not found.")
+            return None
+        return random.choice(pathnames)
+    elif orchideaNumber == 8:
+        dynamics = ['pp', 'mf', 'ff']
+        if dyn not in dynamics:
+            pd.error("Wrong dynamic, must be pp, mf or ff.")
+            return None
+        pathname = os.path.join(ORCHIDEASOL_PATH, 'Strings/Violoncello/pizzicato_l_vib/' + 'Vc-pizz_lv-' + note + '-' + dyn + '*')
+        pathnames = glob.glob(pathname)
+        if pathnames == []:
+            pd.error("Sample not found.")
+            return None
+        if string is not None:
+            pathnames = [path for path in pathnames if string in path]
+        return random.choice(pathnames)
+    elif orchideaNumber == 9:
+        dynamics = ['pp', 'mf', 'ff']
+        if dyn not in dynamics:
+            pd.error("Wrong dynamic, must be pp, mf or ff.")
+            return None
+        pathname = os.path.join(ORCHIDEASOL_PATH, 'Strings/Violoncello/pizzicato_secco/' + 'Vc-pizz_sec-' + note + '-' + dyn + '*')
+        pathnames = glob.glob(pathname)
+        if pathnames == []:
+            pd.error("Sample not found.")
+            return None
+        if string is not None:
+            pathnames = [path for path in pathnames if string in path]
+        return random.choice(pathnames)
+    elif orchideaNumber == 10:
+        dynamics = ['fp', 'f']
+        if dyn not in dynamics:
+            pd.error("Wrong dynamic, must be fp or f.")
+            return None
+        pathname = os.path.join(ORCHIDEASOL_PATH, 'Strings/Violoncello/sforzato/' + 'Vc-sfz-' + note + '-' + dyn + '*')
+        pathnames = glob.glob(pathname)
+        if pathnames == []:
+            pd.error("Sample not found.")
+            return None
+        if string is not None:
+            pathnames = [path for path in pathnames if string in path]
+        return random.choice(pathnames)
+    elif orchideaNumber == 11:
+        dynamics = ['mf']
+        if dyn not in dynamics:
+            pd.error("Wrong dynamic, must be mf.")
+            return None
+        pathname = os.path.join(ORCHIDEASOL_PATH, 'Strings/Violoncello/sul_ponticello/' + 'Vc-pont-' + note + '-' + dyn + '*')
+        pathnames = glob.glob(pathname)
+        if pathnames == []:
+            pd.error("Sample not found.")
+            return None
+        if string is not None:
+            pathnames = [path for path in pathnames if string in path]
+            if pathnames == []:
+                pd.error("This note not exist with string" + string + ".")
+        return random.choice(pathnames)
+    elif orchideaNumber == 12:
+        dynamics = ['mf']
+        if dyn not in dynamics:
+            pd.error("Wrong dynamic, must be mf.")
+            return None
+        pathname = os.path.join(ORCHIDEASOL_PATH, 'Strings/Violoncello/sul_ponticello_tremolo/' + 'Vc-pont_trem-' + note + '-' + dyn + '*')
+        pathnames = glob.glob(pathname)
+        if pathnames == []:
+            pd.error("Sample not found.")
+            return None
+        if string is not None:
+            pathnames = [path for path in pathnames if string in path]
+            if pathnames == []:
+                pd.error("This note not exist with string" + string + ".")
+        return random.choice(pathnames)
+    elif orchideaNumber == 13:        
+        dynamics = ['mf']
+        if dyn not in dynamics:
+            pd.error("Wrong dynamic, must be mf.")
+            return None
+        pathname = os.path.join(ORCHIDEASOL_PATH, 'Strings/Violoncello/sul_tasto_tremolo/' + 'Vc-tasto_trem-' + note + '-' + dyn + '*')
+        pathnames = glob.glob(pathname)
+        if pathnames == []:
+            pd.error("Sample not found.")
+            return None
+        if string is not None:
+            pathnames = [path for path in pathnames if string in path]
+            if pathnames == []:
+                pd.error("This note not exist with string" + string + ".")
+        return random.choice(pathnames)
+    elif orchideaNumber == 14:
+        dynamics = ['pp', 'mf', 'ff']
+        if dyn not in dynamics:
+            pd.error("Wrong dynamic, must be mf.")
+            return None 
+        pathname = os.path.join(ORCHIDEASOL_PATH, 'Strings/Violoncello/tremolo/' + 'Vc-trem-' + note + '-' + dyn + '*')
+        pathnames = glob.glob(pathname)
+        if pathnames == []:
+            pd.error("Sample not found.")
+            return None
+        if string is not None:
+            pathnames = [path for path in pathnames if string in path]
+            if pathnames == []:
+                pd.error("This note not exist with string" + string + ".")
+        return random.choice(pathnames)
+    elif orchideaNumber == 15:
+        dynamics = ['pp', 'mf', 'ff']
+        if dyn not in dynamics:
+            pd.error("Wrong dynamic, must be pp, mf or ff.")
+            return None
+        pathname = os.path.join(ORCHIDEASOL_PATH, 'Strings/Violoncello+sordina/ordinario/' + 'Vc+S-ord-' + note + '-' + dyn + '*')
+        pathnames = glob.glob(pathname)
+        if pathnames == []:
+            pd.error("Sample not found.")
+            return None
+        if string is not None:
+            pathnames = [path for path in pathnames if string in path]
+            if pathnames == []:
+                pd.error("This note not exist with string" + string + ".")
+        return random.choice(pathnames)
+    elif orchideaNumber == 16:
+        dynamics = ['mf']
+        if dyn not in dynamics:
+            pd.error("Wrong dynamic, must be mf.")
+            return None
+        pathname = os.path.join(ORCHIDEASOL_PATH, 'Strings/Violoncello+sordina/tremolo/' + 'Vc+S-trem-' + note + '-' + dyn + '*')
+        pathnames = glob.glob(pathname)
+        if pathnames == []:
+            pd.error("Sample not found.")
+            return None
+        if string is not None:
+            pathnames = [path for path in pathnames if string in path]
+            if pathnames == []:
+                pd.error("This note not exist with string" + string + ".")
+        return random.choice(pathnames)
+    elif orchideaNumber == 17:
+        dynamics = ['mf']
+        if dyn not in dynamics:
+            pd.error("Wrong dynamic, must be pp, mf or ff.")
+            return None
+        pathname = os.path.join(ORCHIDEASOL_PATH, 'Strings/Violoncello+sordina_piombo/ordinario/' + 'Vc+SP-ord-' + note + '-' + dyn + '*')
+        pathnames = glob.glob(pathname)
+        if pathnames == []:
+            pd.error("Sample not found.")
+            return None
+        if string is not None:
+            pathnames = [path for path in pathnames if string in path]
+            if pathnames == []:
+                pd.error("This note not exist with string" + string + ".")
+        return random.choice(pathnames)
+    elif orchideaNumber == 18:
+        dynamics = ['mf']
+        if dyn not in dynamics:
+            pd.error("Wrong dynamic, must be mf.")
+            return None
+        pathname = os.path.join(ORCHIDEASOL_PATH, 'Strings/Violoncello+sordina_piombo/tremolo/' + 'Vc+SP-trem-' + note + '-' + dyn + '*')
+        pathnames = glob.glob(pathname)
+        if pathnames == []:
+            pd.error("Sample not found.")
+            return None
+        if string is not None:
+            pathnames = [path for path in pathnames if string in path]
+            if pathnames == []:
+                pd.error("This note not exist with string" + string + ".")
+        return random.choice(pathnames)
+    else:
+        pd.error("Wrong orchidea number, must be between 1 and 18.")
+        return None
+
+
+    
+
+
+
+
