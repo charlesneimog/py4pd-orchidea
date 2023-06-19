@@ -304,34 +304,36 @@ def orchideaClarinet(note, dyn, orchideaNumber):
         return random.choice(pathnames)
     elif orchideaNumber == 2:
         dynamics = ['pp', 'mf', 'ff']
-        if dyn is not dynamics:
+        if dyn not in dynamics:
             pd.error("Wrong dynamic, must be pp, mf or ff.")
             return None
         pathname = os.path.join(ORCHIDEASOL_PATH, 'Winds/Clarinet_Bb/flatterzunge/' + 'ClBb-flatt-' + note + '-' + dyn + '*')
         pathnames = glob.glob(pathname)
         if pathnames == []:
             pd.error("Sample not found.")
+            return None
         return random.choice(pathnames)
     elif orchideaNumber == 3:
         dynamics = ['mf', 'ff']
-        if dyn is not dynamics:
+        if dyn not in dynamics:
             pd.error("Wrong dynamic, must be mf or ff.")
             return None
-        pathname = os.path.join(ORCHIDEASOL_PATH, 'Winds/Clarinet_Bb/flatterzunge_high_register/' + 'ClBb-flatt_hi_reg' + note + '-' + dyn + '*')
+        pathname = os.path.join(ORCHIDEASOL_PATH, 'Winds/Clarinet_Bb/flatterzunge_high_register/' + 'ClBb-flatt_hi_reg-' + note + '-' + dyn + '*')
         pathnames = glob.glob(pathname)
         if pathnames == []:
             pd.error("Sample not found.")
+            return None
         return random.choice(pathnames)
-    elif orchideaNumber == 5:
+    elif orchideaNumber == 4:
         pathname = os.path.join(ORCHIDEASOL_PATH, 'Winds/Clarinet_Bb/key_click/' + 'ClBb-key_cl-' + note + '-*')
         pathnames = glob.glob(pathname)
         if pathnames == []:
             pd.error("Sample not found.")
             return None
         return random.choice(pathnames)
-    elif orchideaNumber == 6:
+    elif orchideaNumber == 5:
         dynamics = ['pp', 'mf', 'ff']
-        if dyn is not dynamics:
+        if dyn not in dynamics:
             pd.error("Wrong dynamic, must be pp, mf or ff.")
             return None
         pathname = os.path.join(ORCHIDEASOL_PATH, 'Winds/Clarinet_Bb/ordinario/' + 'ClBb-ord-' + note + '-' + dyn + '*')
@@ -340,9 +342,9 @@ def orchideaClarinet(note, dyn, orchideaNumber):
             pd.error("Sample not found.")
             return None
         return random.choice(pathnames)
-    elif orchideaNumber == 7:
+    elif orchideaNumber == 6:
         dynamics = ['pp', 'ff']
-        if dyn is not dynamics:
+        if dyn not in dynamics:
             pd.error("Wrong dynamic, must be pp or ff.")
             return None
         pathname = os.path.join(ORCHIDEASOL_PATH, 'Winds/Clarinet_Bb/ordinario_high_register/' + 'ClBb-ord_hi_reg-' + note + '-' + dyn + '*')
@@ -351,9 +353,9 @@ def orchideaClarinet(note, dyn, orchideaNumber):
             pd.error("Sample not found.")
             return None
         return random.choice(pathnames)
-    elif orchideaNumber == 8:
+    elif orchideaNumber == 7:
         dynamics = ['f', 'fp']
-        if dyn is not dynamics:
+        if dyn not in dynamics:
             pd.error("Wrong dynamic, must be f or fp.")
             return None
         pathname = os.path.join(ORCHIDEASOL_PATH, 'Winds/Clarinet_Bb/sforzato/' + 'ClBb-sfz-' + note + '-' + dyn + '*')
@@ -362,9 +364,255 @@ def orchideaClarinet(note, dyn, orchideaNumber):
             pd.error("Sample not found.")
         return random.choice(pathnames)
     else:
-        pd.error("Wrong orchidea number, must be between 1 and 8.")
+        pd.error("Wrong orchidea number, must be between 1 and 7.")
         return None
     
+
+def orchideaBassoon(note, dyn, orchideaNumber):    
+    '''
+    Get the pathname for orchidea samples.
+
+    Orchidea Bassoon: 
+        Args:
+            note: string "A4"
+            dyn: string "mf"
+            orchideaNumber: int 1-10
+
+        Techniques:
+            Ordinario:
+                1. Blow Without Reed
+                2. Flatterzunge
+                3. Harmonic Fingering
+                4. Key click
+                5. Ordinario
+                6. Sforzato
+                7. Vibrato
+
+            Sordina:
+                8. Ordinario
+    '''
+    if orchideaNumber == 1:
+        pathname = os.path.join(ORCHIDEASOL_PATH, 'Winds/Bassoon/blow_without_reed/' + 'Bn-blow_no_reed-' + note + '*')
+        pathnames = glob.glob(pathname)
+        if pathnames == []:
+            pd.error("Sample not found.")
+            return None
+        return random.choice(pathnames)
+    elif orchideaNumber == 2:
+        pathname = os.path.join(ORCHIDEASOL_PATH, 'Winds/Bassoon/flatterzunge/' + 'Bn-flatt-' + note + '-*')
+        pathnames = glob.glob(pathname)
+        if pathnames == []:
+            pd.error("Sample not found.")
+            return None
+        return random.choice(pathnames)
+    elif orchideaNumber == 3:
+        dynamics = ['p', 'f']
+        if dyn not in dynamics:
+            pd.error("Wrong dynamic, must be p or f.")
+            return None
+        pathname = os.path.join(ORCHIDEASOL_PATH, 'Winds/Bassoon/harmonic_fingering/' + 'Bn-harm_fngr-' + note + '-' + dyn + '*')
+        pathnames = glob.glob(pathname)
+        if pathnames == []:
+            pd.error("Sample not found.")
+            return None
+        return random.choice(pathnames)
+    elif orchideaNumber == 4:
+        pathname = os.path.join(ORCHIDEASOL_PATH, 'Winds/Bassoon/key_click/' + 'Bn-key_cl-' + note + '-*')
+        pathnames = glob.glob(pathname)
+        if pathnames == []:
+            pd.error("Sample not found.")
+            return None
+        return random.choice(pathnames)
+    elif orchideaNumber == 5:
+        dynamics = ['pp', 'mf', 'ff']
+        if dyn not in dynamics:
+            pd.error("Wrong dynamic, must be pp, mf or ff.")
+            return None
+        pathname = os.path.join(ORCHIDEASOL_PATH, 'Winds/Bassoon/ordinario/' + 'Bn-ord-' + note + '-' + dyn + '*')
+        pathnames = glob.glob(pathname)
+        if pathnames == []:
+            pd.error("Sample not found.")
+            return None
+        return random.choice(pathnames)
+    elif orchideaNumber == 6:
+        dynamics = ['f', 'fp']
+        if dyn not in dynamics:
+            pd.error("Wrong dynamic, must be f or fp.")
+            return None
+        pathname = os.path.join(ORCHIDEASOL_PATH, 'Winds/Bassoon/sforzato/' + 'Bn-sfz-' + note + '-' + dyn + '*')
+        pathnames = glob.glob(pathname)
+        if pathnames == []:
+            pd.error("Sample not found.")
+            return None
+        return random.choice(pathnames)
+    elif orchideaNumber == 7:
+        dynamics = ['mf']
+        if dyn not in dynamics:
+            pd.error("Wrong dynamic, must be mf.")
+            return None
+        pathname = os.path.join(ORCHIDEASOL_PATH, 'Winds/Bassoon/vibrato/' + 'Bn-vib-' + note + '-' + dyn + '*')
+        pathnames = glob.glob(pathname)
+        if pathnames == []:
+            pd.error("Sample not found.")
+            return None
+        return random.choice(pathnames)
+    elif orchideaNumber == 8:
+        dynamics = ['mf']
+        if dyn not in dynamics:
+            pd.error("Wrong dynamic, must be mf.")
+            return None
+        pathname = os.path.join(ORCHIDEASOL_PATH, 'Winds/Bassoon+sordina/ordinario/' + 'Bn+S-ord-' + note + '-' + dyn + '*')
+        pathnames = glob.glob(pathname)
+        if pathnames == []:
+            pd.error("Sample not found.")
+        return random.choice(pathnames)
+    else:
+        pd.error("Wrong orchidea number, must be between 1 and 8.")
+        return None
+
+
+def orchideaSax(note, dyn, orchideaNumber):   
+    '''
+    Get the pathname for orchidea samples.
+
+    Orchidea Bassoon: 
+        Args:
+            note: string "A4"
+            dyn: string "mf"
+            orchideaNumber: int 1-10
+
+        Techniques:
+            Ordinario:
+                1. Aeolian
+                2. bisbigliando
+                3. blow_without_reed
+                4. discolored_fingering
+                5. double_tonguing
+                6. flatterzunge
+                7. harmonic_fingering
+                8. key_click
+                9. kiss
+                10. ordinario
+                11. ordinario high register
+                12. sforzato
+                13. slap pitched
+                14. slap unpitched
+    '''
+    if orchideaNumber == 1:
+        pathname = os.path.join(ORCHIDEASOL_PATH, 'Winds/Sax_Alto/aeolian/' + 'ASax-aeol-' + note + '-*')
+        pathnames = glob.glob(pathname)
+        if pathnames == []:
+            pd.error("Sample not found.")
+            return None
+        return random.choice(pathnames)
+    elif orchideaNumber == 2:
+        pathname = os.path.join(ORCHIDEASOL_PATH, 'Winds/Sax_Alto/bisbigliando/' + 'ASax-bisb-' + note + '-*')
+        pathnames = glob.glob(pathname)
+        if pathnames == []:
+            pd.error("Sample not found.")
+            return None
+        return random.choice(pathnames)
+    elif orchideaNumber == 3:
+        pathname = os.path.join(ORCHIDEASOL_PATH, 'Winds/Sax_Alto/blow_without_reed/' + 'ASax-blow_no_reed*')
+        pathnames = glob.glob(pathname)
+        if pathnames == []:
+            pd.error("Sample not found.")
+            return None
+        return pathnames[0]
+    elif orchideaNumber == 4:
+        pathname = os.path.join(ORCHIDEASOL_PATH, 'Winds/Sax_Alto/discolored_fingering/' + 'ASax-dsclrd_fngr-' + note + '-*')
+        pathnames = glob.glob(pathname)
+        if pathnames == []:
+            pd.error("Sample not found.")
+            return None
+        return random.choice(pathnames)
+    elif orchideaNumber == 5:
+        pathname = os.path.join(ORCHIDEASOL_PATH, 'Winds/Sax_Alto/double_tonguing/' + 'ASax-dbl_tng-' + note + '-*')
+        pathnames = glob.glob(pathname)
+        if pathnames == []:
+            pd.error("Sample not found.")
+            return None
+        return random.choice(pathnames)
+    elif orchideaNumber == 6:
+        pathname = os.path.join(ORCHIDEASOL_PATH, 'Winds/Sax_Alto/flatterzunge/' + 'ASax-flatt-' + note + '-*')
+        pathnames = glob.glob(pathname)
+        if pathnames == []:
+            pd.error("Sample not found.")
+            return None
+        return random.choice(pathnames)
+    elif orchideaNumber == 7:
+        pd.logpost(3, "The note input is the harmonic with C#3")
+        pathname = os.path.join(ORCHIDEASOL_PATH, 'Winds/Sax_Alto/harmonic_fingering/' + 'ASax-harm_fngr-C#3_' + note + '-*')
+        pathnames = glob.glob(pathname)
+        if pathnames == []:
+            pd.error("Sample not found.")
+            return None
+        return random.choice(pathnames)
+    elif orchideaNumber == 8:
+        pathnames = glob.glob(os.path.join(ORCHIDEASOL_PATH, 'Winds/Sax_Alto/key_click/' + 'ASax-key_cl-' + note + '-*'))
+        if pathnames == []:
+            pd.error("Sample not found.")
+            return None
+        return random.choice(pathnames)
+    elif orchideaNumber == 9:
+        pathnames = glob.glob(os.path.join(ORCHIDEASOL_PATH, 'Winds/Sax_Alto/kiss/' + 'ASax-kiss-*'))
+        if pathnames == []:
+            pd.error("Sample not found.")
+            return None
+        return random.choice(pathnames)
+    elif orchideaNumber == 10:
+        dynamics = ['pp', 'mf', 'ff']
+        if dyn not in dynamics:
+            pd.error("Wrong dynamic, must be pp, mf or ff.")
+            return None
+        pathname = os.path.join(ORCHIDEASOL_PATH, 'Winds/Sax_Alto/ordinario/' + 'ASax-ord-' + note + '-' + dyn + '*')
+        pathnames = glob.glob(pathname)
+        if pathnames == []:
+            pd.error("Sample not found.")
+            return None
+        return random.choice(pathnames)
+    elif orchideaNumber == 11:
+        dynamics = ['pp', 'mf', 'ff']
+        if dyn not in dynamics:
+            pd.error("Wrong dynamic, must be pp, mf or ff.")
+            return None
+        pathname = os.path.join(ORCHIDEASOL_PATH, 'Winds/Sax_Alto/ordinario_high_register/' + 'ASax-ord_hi_reg-' + note + '-' + dyn + '*')
+        pathnames = glob.glob(pathname)
+        if pathnames == []:
+            pd.error("Sample not found.")
+            return None
+        return random.choice(pathnames)
+    elif orchideaNumber == 12:
+        pathnames = glob.glob(os.path.join(ORCHIDEASOL_PATH, 'Winds/Sax_Alto/sforzato/' + 'ASax-sfz-' + note + '-*'))
+        if pathnames == []:
+            pd.error("Sample not found.")
+            return None
+        return random.choice(pathnames)
+    elif orchideaNumber == 13:
+        dynamics = ['mf', 'f']
+        pathnames = glob.glob(os.path.join(ORCHIDEASOL_PATH, 'Winds/Sax_Alto/slap_pitched/' + 'ASax-slap-' + note + '-' + dyn + '*'))
+        if pathnames == []:
+            pd.error("Sample not found.")
+            return None
+        return random.choice(pathnames)
+    elif orchideaNumber == 14:
+        pathnames = glob.glob(os.path.join(ORCHIDEASOL_PATH, 'Winds/Sax_Alto/slap_unpitched/' + 'ASax-slap_unp-' + note + '-*'))
+        if pathnames == []:
+            pd.error("Sample not found.")
+            return None
+        return random.choice(pathnames)
+    else:
+        pd.error("Wrong orchidea number, must be between 1 and 14.")
+        return None
+    
+
+
+
+
+
+
+
+
 
 
 
