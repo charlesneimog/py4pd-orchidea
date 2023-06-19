@@ -363,20 +363,21 @@ def orchideaViola(note, dyn, orchideaNumber):
                 6. col_legno_tratto
                 7. ordinario
                 8. pizzicato_bartok
-                9. pizzicato_secco
-                10. sforzato
-                11. sul_ponticello
-                12. sul_ponticello_tremolo
-                13. sul_tasto_tremolo
-                14. tremolo
+                9. pizzicato_l_vib
+                10. pizzicato_secco
+                11. sforzato
+                12. sul_ponticello
+                13. sul_ponticello_tremolo
+                14. sul_tasto_tremolo
+                15. tremolo
 
             Sordina:
-                15. ordinario
-                16. tremolo
+                16. ordinario
+                17. tremolo
 
             Sordina Piombo:
-                17. ordinario
-                18. tremolo
+                18. ordinario
+                19. tremolo
 
     '''
     string = pd.getkey('string')
@@ -426,7 +427,7 @@ def orchideaViola(note, dyn, orchideaNumber):
             pd.logpost(3, "send 'key string 1a' to select the string 1a")
         return random.choice(pathnames)
     elif orchideaNumber == 4:
-        pathname = os.path.join(ORCHIDEASOL_PATH, 'Strings/Viola/behind_the_fingerboard/' + 'Va-behind_fingerboard*')
+        pathname = os.path.join(ORCHIDEASOL_PATH, 'Strings/Viola/behind_the_fingerboard/' + 'Va-behind_fngrbrd*')
         pathnames = glob.glob(pathname)
         if pathnames == []:
             pd.error("Sample not found.")
@@ -460,7 +461,7 @@ def orchideaViola(note, dyn, orchideaNumber):
             pd.error("Wrong dynamic, must be mf.")
             return None
         # Va-legno_tratt-G#3-mf-4c-N
-        pathname = os.path.join(ORCHIDEASOL_PATH, 'Strings/Viola/col_legno_tratto/' + 'Va-legno_tratt-' + note + '-' + dyn + '*')
+        pathname = os.path.join(ORCHIDEASOL_PATH, 'Strings/Viola/col_legno_tratto/' + 'Va-legno_tratto-' + note + '-' + dyn + '*')
         pathnames = glob.glob(pathname)
         if pathnames == []:
             pd.error("Sample not found.")
@@ -475,7 +476,228 @@ def orchideaViola(note, dyn, orchideaNumber):
         if dyn not in dynamics:
             pd.error("Wrong dynamic, must be pp, mf or ff.")
             return None
-        # Va-col_legno-G#3-pp-4c-N
+        # Va-ord-A4-ff-1c-N
+        pathname = os.path.join(ORCHIDEASOL_PATH, 'Strings/Viola/ordinario/' + 'Va-ord-' + note + '-' + dyn + '*')
+        pathnames = glob.glob(pathname)
+        if pathnames == []:
+            pd.error("Sample not found.")
+            return None
+        if string is not None:
+            pathnames = [path for path in pathnames if string in path]
+        else:
+            pd.logpost(3, "I recommend to send one message with string [1a, 2a, 3a, 4a] to select the string.")
+            pd.logpost(3, "send 'key string 1a' to select the string 1a")
+        return random.choice(pathnames)
+    elif orchideaNumber == 8:
+        dynamics = ['ff']
+        if dyn not in dynamics:
+            pd.error("Wrong dynamic, must be ff.")
+            return None
+        # Va-pizz-A4-mf-1c-N
+        pathname = os.path.join(ORCHIDEASOL_PATH, 'Strings/Viola/pizzicato_bartok/' + 'Va-pizz_bartok-' + note + '-' + dyn + '*')
+        pathnames = glob.glob(pathname)
+        if pathnames == []:
+            pd.error("Sample not found.")
+            return None
+        if string is not None:
+            pathnames = [path for path in pathnames if string in path]
+        else:
+            pd.logpost(3, "I recommend to send one message with string [1a, 2a, 3a, 4a] to select the string.")
+            pd.logpost(3, "send 'key string 1a' to select the string 1a")
+        return random.choice(pathnames)
+    elif orchideaNumber == 9:
+        dynamics = ['pp', 'mf', 'ff']
+        if dyn not in dynamics:
+            pd.error("Wrong dynamic, must be pp, mf or ff.")
+            return None
+        # Va-pizz-A4-mf-1c-N
+        pathname = os.path.join(ORCHIDEASOL_PATH, 'Strings/Viola/pizzicato_l_vib/' + 'Va-pizz_lv-' + note + '-' + dyn + '*')
+        pathnames = glob.glob(pathname)
+        if pathnames == []:
+            pd.error("Sample not found.")
+            return None
+        if string is not None:
+            pathnames = [path for path in pathnames if string in path]
+        else:
+            pd.logpost(3, "I recommend to send one message with string [1a, 2a, 3a, 4a] to select the string.")
+            pd.logpost(3, "send 'key string 1a' to select the string 1a")
+        return random.choice(pathnames)
+    elif orchideaNumber == 10:
+        dynamics = ['pp', 'mf', 'ff']
+        if dyn not in dynamics:
+            pd.error("Wrong dynamic, must be pp, mf or ff.")
+            return None
+        # Va-pizz-A4-mf-1c-N
+        pathname = os.path.join(ORCHIDEASOL_PATH, 'Strings/Viola/pizzicato_secco/' + 'Va-pizz_sec-' + note + '-' + dyn + '*')
+        pathnames = glob.glob(pathname)
+        if pathnames == []:
+            pd.error("Sample not found.")
+            return None
+        if string is not None:
+            pathnames = [path for path in pathnames if string in path]
+        else:
+            pd.logpost(3, "I recommend to send one message with string [1a, 2a, 3a, 4a] to select the string.")
+            pd.logpost(3, "send 'key string 1a' to select the string 1a")
+        return random.choice(pathnames)
+    elif orchideaNumber == 11:
+        dynamics = ['f', 'fp']
+        if dyn not in dynamics:
+            pd.error("Wrong dynamic, must be f or fp.")
+            return None
+        # Va-sul_A4-fp-1c-N
+        pathname = os.path.join(ORCHIDEASOL_PATH, 'Strings/Viola/sforzato/' + 'Va-sfz-' + note + '-' + dyn + '*')
+        pathnames = glob.glob(pathname)
+        if pathnames == []:
+            pd.error("Sample not found.")
+            return None
+        if string is not None:
+            pathnames = [path for path in pathnames if string in path]
+        else:
+            pd.logpost(3, "I recommend to send one message with string [1a, 2a, 3a, 4a] to select the string.")
+            pd.logpost(3, "send 'key string 1a' to select the string 1a")
+        return random.choice(pathnames)
+    elif orchideaNumber == 12:
+        dynamics = ['mf']
+        if dyn not in dynamics:
+            pd.error("Wrong dynamic, must be mf.")
+            return None
+        # Va-sul_A4-mf-1c-N
+        pathname = os.path.join(ORCHIDEASOL_PATH, 'Strings/Viola/sul_ponticello/' + 'Va-pont-' + note + f"-{dyn}*")
+        pathnames = glob.glob(pathname)
+        if pathnames == []:
+            pd.error("Sample not found.")
+            return None
+        if string is not None:
+            pathnames = [path for path in pathnames if string in path]
+        else:
+            pd.logpost(3, "I recommend to send one message with string [1a, 2a, 3a, 4a] to select the string.")
+            pd.logpost(3, "send 'key string 1a' to select the string 1a")
+        return random.choice(pathnames)
+    elif orchideaNumber == 13:
+        dynamics = ['mf']
+        if dyn not in dynamics:
+            pd.error("Wrong dynamic, must be mf.")
+            return None
+        # Va-sul_A4-mf-1c-N
+        pathname = os.path.join(ORCHIDEASOL_PATH, 'Strings/Viola/sul_ponticello_tremolo/' + 'Va-pont_trem-' + f'{note}-{dyn}*')
+        pathnames = glob.glob(pathname)
+        if pathnames == []:
+            pd.error("Sample not found.")
+            return None
+        if string is not None:
+            pathnames = [path for path in pathnames if string in path]
+        else:
+            pd.logpost(3, "I recommend to send one message with string [1a, 2a, 3a, 4a] to select the string.")
+            pd.logpost(3, "send 'key string 1a' to select the string 1a")
+        return random.choice(pathnames)
+    elif orchideaNumber == 14:
+        dynamics = ['mf']
+        if dyn not in dynamics:
+            pd.error("Wrong dynamic, must be mf.")
+            return None
+        # Va-tasto_trem-A#4-mf-2c-N
+        pathname = os.path.join(ORCHIDEASOL_PATH, 'Strings/Viola/sul_tasto_tremolo/' + 'Va-tasto_trem-' + note + f"-{dyn}*")
+        pathnames = glob.glob(pathname)
+        if pathnames == []:
+            pd.error("Sample not found.")
+            return None
+        if string is not None:
+            pathnames = [path for path in pathnames if string in path]
+        else:
+            pd.logpost(3, "I recommend to send one message with string [1a, 2a, 3a, 4a] to select the string.")
+            pd.logpost(3, "send 'key string 1a' to select the string 1a")
+        return random.choice(pathnames)
+    elif orchideaNumber == 15:
+        dynamics = ['pp', 'mf', 'ff']
+        if dyn not in dynamics:
+            pd.error("Wrong dynamic, must be pp, mf or ff.")
+            return None
+        # Va-trem-A4-mf-1c-N
+        pathname = os.path.join(ORCHIDEASOL_PATH, 'Strings/Viola/tremolo/' + 'Va-trem-' + note + '-' + dyn + '*')
+        pathnames = glob.glob(pathname)
+        if pathnames == []:
+            pd.error("Sample not found.")
+            return None
+        if string is not None:
+            pathnames = [path for path in pathnames if string in path]
+        else:
+            pd.logpost(3, "I recommend to send one message with string [1a, 2a, 3a, 4a] to select the string.")
+            pd.logpost(3, "send 'key string 1a' to select the string 1a")
+        return random.choice(pathnames)
+    elif orchideaNumber == 16:
+        dynamics = ['pp', 'mf', 'ff']
+        if dyn not in dynamics:
+            pd.error("Wrong dynamic, must be pp, mf or ff.")
+            return None
+        # Va-trem_A4-mf-1c-N
+        pathname = os.path.join(ORCHIDEASOL_PATH, 'Strings/Viola+sordina/ordinario/' + 'Va+S-ord-' + note + '-' + dyn + '*')
+        pathnames = glob.glob(pathname)
+        if pathnames == []:
+            pd.error("Sample not found.")
+            return None
+        if string is not None:
+            pathnames = [path for path in pathnames if string in path]
+        else:
+            pd.logpost(3, "I recommend to send one message with string [1a, 2a, 3a, 4a] to select the string.")
+            pd.logpost(3, "send 'key string 1a' to select the string 1a")
+        return random.choice(pathnames)
+    elif orchideaNumber == 17:
+        dynamics = ['mf']
+        if dyn not in dynamics:
+            pd.error("Wrong dynamic, must be mf.")
+            return None
+        # Va-trem_A4-mf-1c-N
+        pathname = os.path.join(ORCHIDEASOL_PATH, 'Strings/Viola+sordina/tremolo/' + 'Va+S-trem-' + note + '-' + dyn + '*')
+        pathnames = glob.glob(pathname)
+        if pathnames == []:
+            pd.error("Sample not found.")
+            return None
+        if string is not None:
+            pathnames = [path for path in pathnames if string in path]
+        else:
+            pd.logpost(3, "I recommend to send one message with string [1a, 2a, 3a, 4a] to select the string.")
+            pd.logpost(3, "send 'key string 1a' to select the string 1a")
+        return random.choice(pathnames)
+    elif orchideaNumber == 18:
+        dynamics = ['mf']
+        if dyn not in dynamics:
+            pd.error("Wrong dynamic, must be mf.")
+            return None
+        # Va-trem_A4-mf-1c-N
+        pathname = os.path.join(ORCHIDEASOL_PATH, 'Strings/Viola+sordina_piombo/ordinario/' + 'Va+SP-ord-' + note + '-' + dyn + '*')
+        pathnames = glob.glob(pathname)
+        if pathnames == []:
+            pd.error("Sample not found.")
+            return None
+        if string is not None:
+            pathnames = [path for path in pathnames if string in path]
+        else:
+            pd.logpost(3, "I recommend to send one message with string [1a, 2a, 3a, 4a] to select the string.")
+            pd.logpost(3, "send 'key string 1a' to select the string 1a")
+        return random.choice(pathnames)
+    elif orchideaNumber == 19:
+        dynamics = ['mf']
+        if dyn not in dynamics:
+            pd.error("Wrong dynamic, must be mf.")
+            return None
+        # Va-trem_A4-mf-1c-N
+        pathname = os.path.join(ORCHIDEASOL_PATH, 'Strings/Viola+sordina_piombo/tremolo/' + 'Va+SP-trem-' + note + '-' + dyn + '*')
+        pathnames = glob.glob(pathname)
+        if pathnames == []:
+            pd.error("Sample not found.")
+            return None
+        if string is not None:
+            pathnames = [path for path in pathnames if string in path]
+        else:
+            pd.logpost(3, "I recommend to send one message with string [1a, 2a, 3a, 4a] to select the string.")
+            pd.logpost(3, "send 'key string 1a' to select the string 1a")
+        return random.choice(pathnames)
+    else:
+        pd.error("Wrong orchidea number.")
+        return None
+            
+
+
 
 
         
