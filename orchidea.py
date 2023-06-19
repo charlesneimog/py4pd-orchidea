@@ -36,6 +36,7 @@ def py4pdLoadObjects():
 
     # Winds
     pd.addobject(orchideaFlute, "orchidea.flute")
+    pd.addobject(orchideaOboe, "orchidea.oboe")
 
     # Strings
     pd.addobject(orchideaViolin, "orchidea.violin")
