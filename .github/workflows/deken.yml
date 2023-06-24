@@ -24,8 +24,10 @@ jobs:
       - name: Make Folder for Upload
         run: |
           mkdir deken/developer/orchidea
-          mkdir deken/developer/orchidea/instruments
-          cp -r instruments/ deken/developer/orchidea/
+          mkdir deken/developer/orchidea/src
+          mkdir deken/developer/orchidea/help
+          cp -r src/ deken/developer/orchidea/
+          cp -r help/ deken/developer/orchidea/
           cp -r README.deken.pd deken/developer/orchidea/
           cp -r orchidea.py deken/developer/orchidea/
           cp -r README.md deken/developer/orchidea/
