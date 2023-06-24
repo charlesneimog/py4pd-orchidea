@@ -1,10 +1,10 @@
 import pd
 import json
-from instruments.Brass import *
-from instruments.Keyboards import *
-from instruments.Strings import *
-from instruments.Winds import *
-from instruments.PluckedStrings import *
+from src.Brass import *
+from src.Keyboards import *
+from src.Strings import *
+from src.Winds import *
+from src.PluckedStrings import *
 
 
 def orchideaConfig(path):
@@ -20,11 +20,84 @@ def orchideaConfig(path):
     json.dump({"orchideaSolPath": path}, open(configPath, "w"))
 
 
+def orchidea(note, dyn, orchideaNumber, orchideaString):
+    '''
+    args:
+        note:: float
+        dyn:: float
+        orchideaString:: str
+
+    Orchidea strings.
+        Winds:
+            flute
+            oboe
+            clarinet
+            bassoon
+            sax
+
+        Strings:
+            violin
+            viola
+            cello
+            contrabass
+
+        Brass:
+            trumpet
+            horn
+            trombone
+            tuba
+
+        Keyboards:
+            accordion
+
+        PluckedStrings:
+            guitar
+            harp
+    '''
+    if orchideaString == "flute":
+        return orchideaFlute(note, dyn, orchideaNumber)
+    elif orchideaString == "oboe":
+        return orchideaOboe(note, dyn, orchideaNumber)
+    elif orchideaString == "clarinet":
+        return orchideaClarinet(note, dyn, orchideaNumber)
+    elif orchideaString == "bassoon":
+        return orchideaBassoon(note, dyn, orchideaNumber)
+    elif orchideaString == "violin":
+        return orchideaViolin(note, dyn, orchideaNumber)
+    elif orchideaString == "viola":
+        return orchideaViola(note, dyn, orchideaNumber)
+    elif orchideaString == "cello":
+        return orchideaCello(note, dyn, orchideaNumber)
+    elif orchideaString == "contrabass":
+        return orchideaContrabass(note, dyn, orchideaNumber)
+    elif orchideaString == "trumpet":
+        return orchideaTrumpet(note, dyn, orchideaNumber)
+    elif orchideaString == "horn":
+        return orchideaHorn(note, dyn, orchideaNumber)
+    elif orchideaString == "trombone":
+        return orchideaTrombone(note, dyn, orchideaNumber)
+    elif orchideaString == "tuba":
+        return orchideaTuba(note, dyn, orchideaNumber)
+    elif orchideaString == "accordion":
+        return orchideaAccordion(note, dyn, orchideaNumber)
+    elif orchideaString == "guitar":
+        return orchideaGuitar(note, dyn, orchideaNumber)
+    elif orchideaString == "harp":
+        return orchideaHarp(note, dyn, orchideaNumber)
+    elif orchideaString == "sax":
+        return orchideaSax(note, dyn, orchideaNumber)
+    else:
+        pd.print("orchideaString not found")
+        return None
+
+
+
 def py4pdLoadObjects():
     '''
     Load all the objects in pd.
     '''
     # Geral
+    pd.addobject(orchidea, "orchidea")
     pd.addobject(orchideaConfig, "orchidea.config")
 
     # Keyboards
