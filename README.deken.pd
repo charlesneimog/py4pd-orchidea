@@ -4,7 +4,7 @@
 #X msg 14 24 /home/neimog/Onedrive/Documents/MusicData/Samples/OrchideaSOL2020, f 66;
 #X obj 15 73 else/keyboard 17 80 2 4 0 0 empty empty;
 #X obj 15 170 stripnote;
-#X msg 70 170 sharp;
+#X msg 22 200 sharp;
 #X obj 15 280 list;
 #X obj 15 322 readsf~;
 #X obj 15 352 dac~;

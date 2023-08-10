@@ -92,39 +92,39 @@ def orchidea(note, dyn, orchideaNumber, orchideaString):
 
 
 
-def py4pdLoadObjects():
+def orchidea_setup():
     '''
     Load all the objects in pd.
     '''
     # Geral
-    pd.addobject(orchidea, "orchidea")
-    pd.addobject(orchideaConfig, "orchidea.config")
+    pd.add_object(orchidea, "orchidea")
+    pd.add_object(orchideaConfig, "orchidea.config")
 
     # Keyboards
-    pd.addobject(orchideaAccordion, "orchidea.accordion")
+    pd.add_object(orchideaAccordion, "orchidea.accordion")
 
     # PluckedStrings
-    pd.addobject(orchideaGuitar, "orchidea.guitar")
-    pd.addobject(orchideaHarp, "orchidea.harp")
+    pd.add_object(orchideaGuitar, "orchidea.guitar")
+    pd.add_object(orchideaHarp, "orchidea.harp")
 
     # Winds
-    pd.addobject(orchideaFlute, "orchidea.flute")
-    pd.addobject(orchideaOboe, "orchidea.oboe")
-    pd.addobject(orchideaClarinet, "orchidea.clarinet")
-    pd.addobject(orchideaBassoon, "orchidea.bassoon")
-    pd.addobject(orchideaSax, "orchidea.sax")
+    pd.add_object(orchideaFlute, "orchidea.flute")
+    pd.add_object(orchideaOboe, "orchidea.oboe")
+    pd.add_object(orchideaClarinet, "orchidea.clarinet")
+    pd.add_object(orchideaBassoon, "orchidea.bassoon")
+    pd.add_object(orchideaSax, "orchidea.sax")
 
     # Strings
-    pd.addobject(orchideaViolin, "orchidea.violin")
-    pd.addobject(orchideaViola, "orchidea.viola")
-    pd.addobject(orchideaCello, "orchidea.cello")
-    pd.addobject(orchideaContrabass, "orchidea.contrabass")
+    pd.add_object(orchideaViolin, "orchidea.violin")
+    pd.add_object(orchideaViola, "orchidea.viola")
+    pd.add_object(orchideaCello, "orchidea.cello")
+    pd.add_object(orchideaContrabass, "orchidea.contrabass")
 
     # Brass
-    pd.addobject(orchideaTrumpet, "orchidea.trumpet")
-    pd.addobject(orchideaHorn, "orchidea.horn")
-    pd.addobject(orchideaTrombone, "orchidea.trombone")
-    pd.addobject(orchideaTuba, "orchidea.tuba")
+    pd.add_object(orchideaTrumpet, "orchidea.trumpet")
+    pd.add_object(orchideaHorn, "orchidea.horn")
+    pd.add_object(orchideaTrombone, "orchidea.trombone")
+    pd.add_object(orchideaTuba, "orchidea.tuba")
 
 
 

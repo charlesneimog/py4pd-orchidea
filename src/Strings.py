@@ -20,7 +20,7 @@ else:
     ORCHIDEASOL_PATH = json.load(open(configPath))["orchideaSolPath"]
 
 
-def orchideaViolin(note, dyn, orchideaNumber):
+def orchideaViolin(note, dyn, orchideaNumber, **kwargs):
     '''
     Orchidea Violin: 
         Args:
@@ -53,7 +53,7 @@ def orchideaViolin(note, dyn, orchideaNumber):
                 17. ordinario+Violin+sordina_piombo       
                 18. tremolo+sordina_piombo
     '''
-    string = pd.getkey('string')
+    string = kwargs.get('string', None)
     if orchideaNumber == 1:
         dynamics = ['mf']
         if dyn not in dynamics:
@@ -341,11 +341,11 @@ def orchideaViolin(note, dyn, orchideaNumber):
             pd.logpost(3, "send 'key string 1c' to select the string 1c")
         return random.choice(pathnames)
     else:
-        pd.error("Wrong orchidea number.")
+        pd.error("Wrong orchidea number, must be 1-18. Received: " + str(orchideaNumber))
         return None
 
 
-def orchideaViola(note, dyn, orchideaNumber):
+def orchideaViola(note, dyn, orchideaNumber, **kwargs):
     '''
     Orchidea Viola: 
         Args:
@@ -380,7 +380,7 @@ def orchideaViola(note, dyn, orchideaNumber):
                 19. tremolo
 
     '''
-    string = pd.getkey('string')
+    string = kwargs.get('string', None)
     if orchideaNumber == 1:
         dynamics = ['mf']
         if dyn not in dynamics:
