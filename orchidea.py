@@ -1,10 +1,13 @@
-import pd
 import json
+import platform
+
+import pd
+
 from src.Brass import *
 from src.Keyboards import *
+from src.PluckedStrings import *
 from src.Strings import *
 from src.Winds import *
-from src.PluckedStrings import *
 
 
 def orchideaConfig(path):
@@ -14,10 +17,19 @@ def orchideaConfig(path):
 
     Set the path to orchidea samples.
     '''
+    # check if last char of the path is / for linux and mac or \\ for windows
+    if platform.system() == "Windows":
+        if path[-1] != "\\":
+            path += "\\"
+    elif platform.system() == "Linux" or platform.system() == "Darwin":
+        if path[-1] != "/":
+            path += "/"
+
     scriptPath = os.path.dirname(os.path.realpath(__file__))
     # check if there is config.json inside the script folder
     configPath = os.path.join(scriptPath, "config.json")
     json.dump({"orchideaSolPath": path}, open(configPath, "w"))
+    pd.print("Path added!")
 
 
 def orchidea(note, dyn, orchideaNumber, orchideaString):
