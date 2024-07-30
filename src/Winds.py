@@ -1,8 +1,9 @@
-import pd
-import os
-import json
 import glob
+import json
+import os
 import random
+
+import pd
 
 # find where is this script
 scriptPath = os.path.dirname(os.path.realpath(__file__))

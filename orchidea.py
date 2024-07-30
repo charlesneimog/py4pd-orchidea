@@ -11,12 +11,12 @@ from src.Winds import *
 
 
 def orchideaConfig(path):
-    '''
+    """
     args:
         path:: str
 
     Set the path to orchidea samples.
-    '''
+    """
     # check if last char of the path is / for linux and mac or \\ for windows
     if platform.system() == "Windows":
         if path[-1] != "\\":
@@ -32,8 +32,8 @@ def orchideaConfig(path):
     pd.print("Path added!")
 
 
-def orchidea(note, dyn, orchideaNumber, orchideaString):
-    '''
+def orchidea(note, dyn, orchideaNumber, orchideaString, **kwargs):
+    """
     args:
         note:: float
         dyn:: float
@@ -65,49 +65,49 @@ def orchidea(note, dyn, orchideaNumber, orchideaString):
         PluckedStrings:
             guitar
             harp
-    '''
+    """
+
     if orchideaString == "flute":
-        return orchideaFlute(note, dyn, orchideaNumber)
+        return orchideaFlute(note, dyn, orchideaNumber, **kwargs)
     elif orchideaString == "oboe":
-        return orchideaOboe(note, dyn, orchideaNumber)
+        return orchideaOboe(note, dyn, orchideaNumber, **kwargs)
     elif orchideaString == "clarinet":
-        return orchideaClarinet(note, dyn, orchideaNumber)
+        return orchideaClarinet(note, dyn, orchideaNumber, **kwargs)
     elif orchideaString == "bassoon":
-        return orchideaBassoon(note, dyn, orchideaNumber)
+        return orchideaBassoon(note, dyn, orchideaNumber, **kwargs)
     elif orchideaString == "violin":
-        return orchideaViolin(note, dyn, orchideaNumber)
+        return orchideaViolin(note, dyn, orchideaNumber, **kwargs)
     elif orchideaString == "viola":
-        return orchideaViola(note, dyn, orchideaNumber)
+        return orchideaViola(note, dyn, orchideaNumber, **kwargs)
     elif orchideaString == "cello":
-        return orchideaCello(note, dyn, orchideaNumber)
+        return orchideaCello(note, dyn, orchideaNumber, **kwargs)
     elif orchideaString == "contrabass":
-        return orchideaContrabass(note, dyn, orchideaNumber)
+        return orchideaContrabass(note, dyn, orchideaNumber, **kwargs)
     elif orchideaString == "trumpet":
-        return orchideaTrumpet(note, dyn, orchideaNumber)
+        return orchideaTrumpet(note, dyn, orchideaNumber, **kwargs)
     elif orchideaString == "horn":
-        return orchideaHorn(note, dyn, orchideaNumber)
+        return orchideaHorn(note, dyn, orchideaNumber, **kwargs)
     elif orchideaString == "trombone":
-        return orchideaTrombone(note, dyn, orchideaNumber)
+        return orchideaTrombone(note, dyn, orchideaNumber, **kwargs)
     elif orchideaString == "tuba":
-        return orchideaTuba(note, dyn, orchideaNumber)
+        return orchideaTuba(note, dyn, orchideaNumber, **kwargs)
     elif orchideaString == "accordion":
-        return orchideaAccordion(note, dyn, orchideaNumber)
+        return orchideaAccordion(note, dyn, orchideaNumber, **kwargs)
     elif orchideaString == "guitar":
-        return orchideaGuitar(note, dyn, orchideaNumber)
+        return orchideaGuitar(note, dyn, orchideaNumber, **kwargs)
     elif orchideaString == "harp":
-        return orchideaHarp(note, dyn, orchideaNumber)
+        return orchideaHarp(note, dyn, orchideaNumber, **kwargs)
     elif orchideaString == "sax":
-        return orchideaSax(note, dyn, orchideaNumber)
+        return orchideaSax(note, dyn, orchideaNumber, **kwargs)
     else:
         pd.print("orchideaString not found")
         return None
 
 
-
 def orchidea_setup():
-    '''
+    """
     Load all the objects in pd.
-    '''
+    """
     # Geral
     pd.add_object(orchidea, "orchidea")
     pd.add_object(orchideaConfig, "orchidea.config")
@@ -137,7 +137,3 @@ def orchidea_setup():
     pd.add_object(orchideaHorn, "orchidea.horn")
     pd.add_object(orchideaTrombone, "orchidea.trombone")
     pd.add_object(orchideaTuba, "orchidea.tuba")
-
-
-
-
