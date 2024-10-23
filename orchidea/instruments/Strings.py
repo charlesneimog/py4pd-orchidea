@@ -15,9 +15,7 @@ scriptPath = os.path.dirname(scriptPath)
 # check if there is config.json inside the script folder
 configPath = os.path.join(scriptPath, "config.json")
 if not os.path.exists(configPath):
-    pd.error(
-        "config.json not found, use the object [orchidea.config] to set the path to orchidea samples"
-    )
+    pd.error("config.json not found, use the object [orchidea.config] to set the path to orchidea samples")
 
 else:
     ORCHIDEASOL_PATH = json.load(open(configPath))["orchideaSolPath"]
@@ -68,12 +66,7 @@ def orchideaViolin(note, dyn, orchideaNumber, **kwargs):
             return None
         pathname = os.path.join(
             ORCHIDEASOL_PATH,
-            "Strings/Violin/artificial_harmonic/"
-            + "Vn-art_harm-"
-            + note
-            + "-"
-            + dyn
-            + "*",
+            "Strings/Violin/artificial_harmonic/" + "Vn-art_harm-" + note + "-" + dyn + "*",
         )
         pathnames = glob.glob(pathname)
         if pathnames == []:
@@ -92,12 +85,7 @@ def orchideaViolin(note, dyn, orchideaNumber, **kwargs):
         # Vn-art_harm_trem-G7-mf-2c-N
         pathname = os.path.join(
             ORCHIDEASOL_PATH,
-            "Strings/Violin/harmonic_tremolo/"
-            + "Vn-art_harm_trem-"
-            + note
-            + "-"
-            + dyn
-            + "*",
+            "Strings/Violin/harmonic_tremolo/" + "Vn-art_harm_trem-" + note + "-" + dyn + "*",
         )
         pathnames = glob.glob(pathname)
         if pathnames == []:
@@ -147,12 +135,7 @@ def orchideaViolin(note, dyn, orchideaNumber, **kwargs):
             return None
         pathname = os.path.join(
             ORCHIDEASOL_PATH,
-            "Strings/Violin/col_legno_battuto/"
-            + "Vn-legno_batt-"
-            + note
-            + "-"
-            + dyn
-            + "*",
+            "Strings/Violin/col_legno_battuto/" + "Vn-legno_batt-" + note + "-" + dyn + "*",
         )
         pathnames = glob.glob(pathname)
         if pathnames == []:
@@ -176,12 +159,7 @@ def orchideaViolin(note, dyn, orchideaNumber, **kwargs):
             return None
         pathname = os.path.join(
             ORCHIDEASOL_PATH,
-            "Strings/Violin/col_legno_tratto/"
-            + "Vn-legno_tratto-"
-            + note
-            + "-"
-            + dyn
-            + "*",
+            "Strings/Violin/col_legno_tratto/" + "Vn-legno_tratto-" + note + "-" + dyn + "*",
         )
         pathnames = glob.glob(pathname)
         if pathnames == []:
@@ -231,12 +209,7 @@ def orchideaViolin(note, dyn, orchideaNumber, **kwargs):
             return None
         pathname = os.path.join(
             ORCHIDEASOL_PATH,
-            "Strings/Violin/pizzicato_bartok/"
-            + "Vn-pizz_bartok-"
-            + note
-            + "-"
-            + dyn
-            + "*",
+            "Strings/Violin/pizzicato_bartok/" + "Vn-pizz_bartok-" + note + "-" + dyn + "*",
         )
         pathnames = glob.glob(pathname)
         if pathnames == []:
@@ -363,12 +336,7 @@ def orchideaViolin(note, dyn, orchideaNumber, **kwargs):
             return None
         pathname = os.path.join(
             ORCHIDEASOL_PATH,
-            "Strings/Violin/sul_ponticello_tremolo/"
-            + "Vn-pont_trem-"
-            + note
-            + "-"
-            + dyn
-            + "*",
+            "Strings/Violin/sul_ponticello_tremolo/" + "Vn-pont_trem-" + note + "-" + dyn + "*",
         )
         pathnames = glob.glob(pathname)
         if pathnames == []:
@@ -465,12 +433,7 @@ def orchideaViolin(note, dyn, orchideaNumber, **kwargs):
         # Vn+SP-ord-A#3-mf-4c-T10u
         pathname = os.path.join(
             ORCHIDEASOL_PATH,
-            "Strings/Violin+sordina_piombo/ordinario/"
-            + "Vn+SP-ord-"
-            + note
-            + "-"
-            + dyn
-            + "*",
+            "Strings/Violin+sordina_piombo/ordinario/" + "Vn+SP-ord-" + note + "-" + dyn + "*",
         )
         pathnames = glob.glob(pathname)
         if pathnames == []:
@@ -495,12 +458,7 @@ def orchideaViolin(note, dyn, orchideaNumber, **kwargs):
         # Vn+SP-trem-A#6-mf-4c-T10u
         pathname = os.path.join(
             ORCHIDEASOL_PATH,
-            "Strings/Violin+sordina_piombo/tremolo/"
-            + "Vn+SP-trem-"
-            + note
-            + "-"
-            + dyn
-            + "*",
+            "Strings/Violin+sordina_piombo/tremolo/" + "Vn+SP-trem-" + note + "-" + dyn + "*",
         )
         pathnames = glob.glob(pathname)
         if pathnames == []:
@@ -518,9 +476,7 @@ def orchideaViolin(note, dyn, orchideaNumber, **kwargs):
         return random.choice(pathnames)
     else:
         if warning:
-            pd.error(
-                "Wrong orchidea number, must be 1-18. Received: " + str(orchideaNumber)
-            )
+            pd.error("Wrong orchidea number, must be 1-18. Received: " + str(orchideaNumber))
         return None
 
 
@@ -570,12 +526,7 @@ def orchideaViola(note, dyn, orchideaNumber, **kwargs):
         # Va-art_harm-G6-mf-2c-N
         pathname = os.path.join(
             ORCHIDEASOL_PATH,
-            "Strings/Viola/artificial_harmonic/"
-            + "Va-art_harm-"
-            + note
-            + "-"
-            + dyn
-            + "*",
+            "Strings/Viola/artificial_harmonic/" + "Va-art_harm-" + note + "-" + dyn + "*",
         )
         pathnames = glob.glob(pathname)
         if pathnames == []:
@@ -600,12 +551,7 @@ def orchideaViola(note, dyn, orchideaNumber, **kwargs):
         # Va-art_harm_trem-G6-mf-2c-N
         pathname = os.path.join(
             ORCHIDEASOL_PATH,
-            "Strings/Viola/artificial_harmonic_tremolo/"
-            + "Va-art_harm_trem-"
-            + note
-            + "-"
-            + dyn
-            + "*",
+            "Strings/Viola/artificial_harmonic_tremolo/" + "Va-art_harm_trem-" + note + "-" + dyn + "*",
         )
         pathnames = glob.glob(pathname)
         if pathnames == []:
@@ -621,9 +567,7 @@ def orchideaViola(note, dyn, orchideaNumber, **kwargs):
             pd.logpost(4, "send 'key string 1a' to select the string 1a")
         return random.choice(pathnames)
     elif orchideaNumber == 3:
-        pathname = os.path.join(
-            ORCHIDEASOL_PATH, "Strings/Viola/behind_the_bridge/" + "Va-behind_bridge*"
-        )
+        pathname = os.path.join(ORCHIDEASOL_PATH, "Strings/Viola/behind_the_bridge/" + "Va-behind_bridge*")
         pathnames = glob.glob(pathname)
         if pathnames == []:
             if warning:
@@ -666,12 +610,7 @@ def orchideaViola(note, dyn, orchideaNumber, **kwargs):
         # Va-legno_batt-G#3-mf-4c-N
         pathname = os.path.join(
             ORCHIDEASOL_PATH,
-            "Strings/Viola/col_legno_battuto/"
-            + "Va-legno_batt-"
-            + note
-            + "-"
-            + dyn
-            + "*",
+            "Strings/Viola/col_legno_battuto/" + "Va-legno_batt-" + note + "-" + dyn + "*",
         )
         pathnames = glob.glob(pathname)
         if pathnames == []:
@@ -696,12 +635,7 @@ def orchideaViola(note, dyn, orchideaNumber, **kwargs):
         # Va-legno_tratt-G#3-mf-4c-N
         pathname = os.path.join(
             ORCHIDEASOL_PATH,
-            "Strings/Viola/col_legno_tratto/"
-            + "Va-legno_tratto-"
-            + note
-            + "-"
-            + dyn
-            + "*",
+            "Strings/Viola/col_legno_tratto/" + "Va-legno_tratto-" + note + "-" + dyn + "*",
         )
         pathnames = glob.glob(pathname)
         if pathnames == []:
@@ -750,12 +684,7 @@ def orchideaViola(note, dyn, orchideaNumber, **kwargs):
         # Va-pizz-A4-mf-1c-N
         pathname = os.path.join(
             ORCHIDEASOL_PATH,
-            "Strings/Viola/pizzicato_bartok/"
-            + "Va-pizz_bartok-"
-            + note
-            + "-"
-            + dyn
-            + "*",
+            "Strings/Viola/pizzicato_bartok/" + "Va-pizz_bartok-" + note + "-" + dyn + "*",
         )
         pathnames = glob.glob(pathname)
         if pathnames == []:
@@ -880,9 +809,7 @@ def orchideaViola(note, dyn, orchideaNumber, **kwargs):
         # Va-sul_A4-mf-1c-N
         pathname = os.path.join(
             ORCHIDEASOL_PATH,
-            "Strings/Viola/sul_ponticello_tremolo/"
-            + "Va-pont_trem-"
-            + f"{note}-{dyn}*",
+            "Strings/Viola/sul_ponticello_tremolo/" + "Va-pont_trem-" + f"{note}-{dyn}*",
         )
         pathnames = glob.glob(pathname)
         if pathnames == []:
@@ -1007,12 +934,7 @@ def orchideaViola(note, dyn, orchideaNumber, **kwargs):
         # Va-trem_A4-mf-1c-N
         pathname = os.path.join(
             ORCHIDEASOL_PATH,
-            "Strings/Viola+sordina_piombo/ordinario/"
-            + "Va+SP-ord-"
-            + note
-            + "-"
-            + dyn
-            + "*",
+            "Strings/Viola+sordina_piombo/ordinario/" + "Va+SP-ord-" + note + "-" + dyn + "*",
         )
         pathnames = glob.glob(pathname)
         if pathnames == []:
@@ -1037,12 +959,7 @@ def orchideaViola(note, dyn, orchideaNumber, **kwargs):
         # Va-trem_A4-mf-1c-N
         pathname = os.path.join(
             ORCHIDEASOL_PATH,
-            "Strings/Viola+sordina_piombo/tremolo/"
-            + "Va+SP-trem-"
-            + note
-            + "-"
-            + dyn
-            + "*",
+            "Strings/Viola+sordina_piombo/tremolo/" + "Va+SP-trem-" + note + "-" + dyn + "*",
         )
         pathnames = glob.glob(pathname)
         if pathnames == []:
@@ -1104,12 +1021,7 @@ def orchideaCello(note, dyn, orchideaNumber, **kwargs):
         # Vc-art_harm-G4-mf-3c-N
         pathname = os.path.join(
             ORCHIDEASOL_PATH,
-            "Strings/Violoncello/artificial_harmonic/"
-            + "Vc-art_harm-"
-            + note
-            + "-"
-            + dyn
-            + "*",
+            "Strings/Violoncello/artificial_harmonic/" + "Vc-art_harm-" + note + "-" + dyn + "*",
         )
         pathnames = glob.glob(pathname)
         if pathnames == []:
@@ -1134,12 +1046,7 @@ def orchideaCello(note, dyn, orchideaNumber, **kwargs):
         # Vc-art_harm_trem-G4-mf-3c-N
         pathname = os.path.join(
             ORCHIDEASOL_PATH,
-            "Strings/Violoncello/artificial_harmonic_tremolo/"
-            + "Vc-art_harm_trem-"
-            + note
-            + "-"
-            + dyn
-            + "*",
+            "Strings/Violoncello/artificial_harmonic_tremolo/" + "Vc-art_harm_trem-" + note + "-" + dyn + "*",
         )
         pathnames = glob.glob(pathname)
         if pathnames == []:
@@ -1172,12 +1079,7 @@ def orchideaCello(note, dyn, orchideaNumber, **kwargs):
         dynamics = ["mf"]
         pathname = os.path.join(
             ORCHIDEASOL_PATH,
-            "Strings/Violoncello/col_legno_battuto/"
-            + "Vc-legno_batt-"
-            + note
-            + "-"
-            + dyn
-            + "*",
+            "Strings/Violoncello/col_legno_battuto/" + "Vc-legno_batt-" + note + "-" + dyn + "*",
         )
         pathnames = glob.glob(pathname)
         if pathnames == []:
@@ -1191,12 +1093,7 @@ def orchideaCello(note, dyn, orchideaNumber, **kwargs):
         dynamics = ["mf"]
         pathname = os.path.join(
             ORCHIDEASOL_PATH,
-            "Strings/Violoncello/col_legno_tratto/"
-            + "Vc-legno_tratto-"
-            + note
-            + "-"
-            + dyn
-            + "*",
+            "Strings/Violoncello/col_legno_tratto/" + "Vc-legno_tratto-" + note + "-" + dyn + "*",
         )
         pathnames = glob.glob(pathname)
         if pathnames == []:
@@ -1228,12 +1125,7 @@ def orchideaCello(note, dyn, orchideaNumber, **kwargs):
             return None
         pathname = os.path.join(
             ORCHIDEASOL_PATH,
-            "Strings/Violoncello/pizzicato_bartok/"
-            + "Vc-pizz_bartok-"
-            + note
-            + "-"
-            + dyn
-            + "*",
+            "Strings/Violoncello/pizzicato_bartok/" + "Vc-pizz_bartok-" + note + "-" + dyn + "*",
         )
         pathnames = glob.glob(pathname)
         if pathnames == []:
@@ -1249,12 +1141,7 @@ def orchideaCello(note, dyn, orchideaNumber, **kwargs):
             return None
         pathname = os.path.join(
             ORCHIDEASOL_PATH,
-            "Strings/Violoncello/pizzicato_l_vib/"
-            + "Vc-pizz_lv-"
-            + note
-            + "-"
-            + dyn
-            + "*",
+            "Strings/Violoncello/pizzicato_l_vib/" + "Vc-pizz_lv-" + note + "-" + dyn + "*",
         )
         pathnames = glob.glob(pathname)
         if pathnames == []:
@@ -1272,12 +1159,7 @@ def orchideaCello(note, dyn, orchideaNumber, **kwargs):
             return None
         pathname = os.path.join(
             ORCHIDEASOL_PATH,
-            "Strings/Violoncello/pizzicato_secco/"
-            + "Vc-pizz_sec-"
-            + note
-            + "-"
-            + dyn
-            + "*",
+            "Strings/Violoncello/pizzicato_secco/" + "Vc-pizz_sec-" + note + "-" + dyn + "*",
         )
         pathnames = glob.glob(pathname)
         if pathnames == []:
@@ -1334,12 +1216,7 @@ def orchideaCello(note, dyn, orchideaNumber, **kwargs):
             return None
         pathname = os.path.join(
             ORCHIDEASOL_PATH,
-            "Strings/Violoncello/sul_ponticello_tremolo/"
-            + "Vc-pont_trem-"
-            + note
-            + "-"
-            + dyn
-            + "*",
+            "Strings/Violoncello/sul_ponticello_tremolo/" + "Vc-pont_trem-" + note + "-" + dyn + "*",
         )
         pathnames = glob.glob(pathname)
         if pathnames == []:
@@ -1360,12 +1237,7 @@ def orchideaCello(note, dyn, orchideaNumber, **kwargs):
             return None
         pathname = os.path.join(
             ORCHIDEASOL_PATH,
-            "Strings/Violoncello/sul_tasto_tremolo/"
-            + "Vc-tasto_trem-"
-            + note
-            + "-"
-            + dyn
-            + "*",
+            "Strings/Violoncello/sul_tasto_tremolo/" + "Vc-tasto_trem-" + note + "-" + dyn + "*",
         )
         pathnames = glob.glob(pathname)
         if pathnames == []:
@@ -1407,12 +1279,7 @@ def orchideaCello(note, dyn, orchideaNumber, **kwargs):
             return None
         pathname = os.path.join(
             ORCHIDEASOL_PATH,
-            "Strings/Violoncello+sordina/ordinario/"
-            + "Vc+S-ord-"
-            + note
-            + "-"
-            + dyn
-            + "*",
+            "Strings/Violoncello+sordina/ordinario/" + "Vc+S-ord-" + note + "-" + dyn + "*",
         )
         pathnames = glob.glob(pathname)
         if pathnames == []:
@@ -1433,12 +1300,7 @@ def orchideaCello(note, dyn, orchideaNumber, **kwargs):
             return None
         pathname = os.path.join(
             ORCHIDEASOL_PATH,
-            "Strings/Violoncello+sordina/tremolo/"
-            + "Vc+S-trem-"
-            + note
-            + "-"
-            + dyn
-            + "*",
+            "Strings/Violoncello+sordina/tremolo/" + "Vc+S-trem-" + note + "-" + dyn + "*",
         )
         pathnames = glob.glob(pathname)
         if pathnames == []:
@@ -1459,12 +1321,7 @@ def orchideaCello(note, dyn, orchideaNumber, **kwargs):
             return None
         pathname = os.path.join(
             ORCHIDEASOL_PATH,
-            "Strings/Violoncello+sordina_piombo/ordinario/"
-            + "Vc+SP-ord-"
-            + note
-            + "-"
-            + dyn
-            + "*",
+            "Strings/Violoncello+sordina_piombo/ordinario/" + "Vc+SP-ord-" + note + "-" + dyn + "*",
         )
         pathnames = glob.glob(pathname)
         if pathnames == []:
@@ -1485,12 +1342,7 @@ def orchideaCello(note, dyn, orchideaNumber, **kwargs):
             return None
         pathname = os.path.join(
             ORCHIDEASOL_PATH,
-            "Strings/Violoncello+sordina_piombo/tremolo/"
-            + "Vc+SP-trem-"
-            + note
-            + "-"
-            + dyn
-            + "*",
+            "Strings/Violoncello+sordina_piombo/tremolo/" + "Vc+SP-trem-" + note + "-" + dyn + "*",
         )
         pathnames = glob.glob(pathname)
         if pathnames == []:
@@ -1549,12 +1401,7 @@ def orchideaContrabass(note, dyn, orchideaNumber, **kwargs):
         # Cb-art_harm-G4-mf-3c-N
         pathname = os.path.join(
             ORCHIDEASOL_PATH,
-            "Strings/Contrabass/artificial_harmonic/"
-            + "Cb-art_harm-"
-            + note
-            + "-"
-            + dyn
-            + "*",
+            "Strings/Contrabass/artificial_harmonic/" + "Cb-art_harm-" + note + "-" + dyn + "*",
         )
         pathnames = glob.glob(pathname)
         if pathnames == []:
@@ -1579,12 +1426,7 @@ def orchideaContrabass(note, dyn, orchideaNumber, **kwargs):
         # Cb-art_harm_trem-G4-mf-3c-N
         pathname = os.path.join(
             ORCHIDEASOL_PATH,
-            "Strings/Contrabass/artificial_harmonic_tremolo/"
-            + "Cb-art_harm_trem-"
-            + note
-            + "-"
-            + dyn
-            + "*",
+            "Strings/Contrabass/artificial_harmonic_tremolo/" + "Cb-art_harm_trem-" + note + "-" + dyn + "*",
         )
         pathnames = glob.glob(pathname)
         if pathnames == []:
@@ -1617,12 +1459,7 @@ def orchideaContrabass(note, dyn, orchideaNumber, **kwargs):
         dynamics = ["mf"]
         pathname = os.path.join(
             ORCHIDEASOL_PATH,
-            "Strings/Contrabass/col_legno_battuto/"
-            + "Cb-legno_batt-"
-            + note
-            + "-"
-            + dyn
-            + "*",
+            "Strings/Contrabass/col_legno_battuto/" + "Cb-legno_batt-" + note + "-" + dyn + "*",
         )
         pathnames = glob.glob(pathname)
         if pathnames == []:
@@ -1636,12 +1473,7 @@ def orchideaContrabass(note, dyn, orchideaNumber, **kwargs):
         dynamics = ["mf"]
         pathname = os.path.join(
             ORCHIDEASOL_PATH,
-            "Strings/Contrabass/col_legno_tratto/"
-            + "Cb-legno_tratto-"
-            + note
-            + "-"
-            + dyn
-            + "*",
+            "Strings/Contrabass/col_legno_tratto/" + "Cb-legno_tratto-" + note + "-" + dyn + "*",
         )
         pathnames = glob.glob(pathname)
         if pathnames == []:
@@ -1673,12 +1505,7 @@ def orchideaContrabass(note, dyn, orchideaNumber, **kwargs):
             return None
         pathname = os.path.join(
             ORCHIDEASOL_PATH,
-            "Strings/Contrabass/pizzicato_bartok/"
-            + "Cb-pizz_bartok-"
-            + note
-            + "-"
-            + dyn
-            + "*",
+            "Strings/Contrabass/pizzicato_bartok/" + "Cb-pizz_bartok-" + note + "-" + dyn + "*",
         )
         pathnames = glob.glob(pathname)
         if pathnames == []:
@@ -1694,12 +1521,7 @@ def orchideaContrabass(note, dyn, orchideaNumber, **kwargs):
             return None
         pathname = os.path.join(
             ORCHIDEASOL_PATH,
-            "Strings/Contrabass/pizzicato_l_vib/"
-            + "Cb-pizz_lv-"
-            + note
-            + "-"
-            + dyn
-            + "*",
+            "Strings/Contrabass/pizzicato_l_vib/" + "Cb-pizz_lv-" + note + "-" + dyn + "*",
         )
         pathnames = glob.glob(pathname)
         if pathnames == []:
@@ -1717,12 +1539,7 @@ def orchideaContrabass(note, dyn, orchideaNumber, **kwargs):
             return None
         pathname = os.path.join(
             ORCHIDEASOL_PATH,
-            "Strings/Contrabass/pizzicato_secco/"
-            + "Cb-pizz_sec-"
-            + note
-            + "-"
-            + dyn
-            + "*",
+            "Strings/Contrabass/pizzicato_secco/" + "Cb-pizz_sec-" + note + "-" + dyn + "*",
         )
         pathnames = glob.glob(pathname)
         if pathnames == []:
@@ -1779,12 +1596,7 @@ def orchideaContrabass(note, dyn, orchideaNumber, **kwargs):
             return None
         pathname = os.path.join(
             ORCHIDEASOL_PATH,
-            "Strings/Contrabass/sul_ponticello_tremolo/"
-            + "Cb-pont_trem-"
-            + note
-            + "-"
-            + dyn
-            + "*",
+            "Strings/Contrabass/sul_ponticello_tremolo/" + "Cb-pont_trem-" + note + "-" + dyn + "*",
         )
         pathnames = glob.glob(pathname)
         if pathnames == []:
@@ -1805,12 +1617,7 @@ def orchideaContrabass(note, dyn, orchideaNumber, **kwargs):
             return None
         pathname = os.path.join(
             ORCHIDEASOL_PATH,
-            "Strings/Contrabass/sul_tasto_tremolo/"
-            + "Cb-tasto_trem-"
-            + note
-            + "-"
-            + dyn
-            + "*",
+            "Strings/Contrabass/sul_tasto_tremolo/" + "Cb-tasto_trem-" + note + "-" + dyn + "*",
         )
         pathnames = glob.glob(pathname)
         if pathnames == []:
@@ -1852,12 +1659,7 @@ def orchideaContrabass(note, dyn, orchideaNumber, **kwargs):
             return None
         pathname = os.path.join(
             ORCHIDEASOL_PATH,
-            "Strings/Contrabass+sordina/ordinario/"
-            + "Cb+S-ord-"
-            + note
-            + "-"
-            + dyn
-            + "*",
+            "Strings/Contrabass+sordina/ordinario/" + "Cb+S-ord-" + note + "-" + dyn + "*",
         )
         pathnames = glob.glob(pathname)
         if pathnames == []:
@@ -1878,12 +1680,7 @@ def orchideaContrabass(note, dyn, orchideaNumber, **kwargs):
             return None
         pathname = os.path.join(
             ORCHIDEASOL_PATH,
-            "Strings/Contrabass+sordina/tremolo/"
-            + "Cb+S-trem-"
-            + note
-            + "-"
-            + dyn
-            + "*",
+            "Strings/Contrabass+sordina/tremolo/" + "Cb+S-trem-" + note + "-" + dyn + "*",
         )
         pathnames = glob.glob(pathname)
         if pathnames == []:
