@@ -1,16 +1,16 @@
 [project]
-name = "py4pd-orchidea" # name to be used when running pip install 
-version = "0.1.0" # version number 
+name = "py4pd-orchidea" 
+version = "0.1.1" 
 description = "py4pd-orchidea is a Pure Data (Pd) external object that allows to use the Orchidea SOL samples library." # Description
 
 [project.urls]
 "Source Code" = "https://github.com/charlesneimog/py4pd-orchidea" 
 
 [tool.setuptools]
-packages = ["orchidea"]  # Name of the package to be imported
+packages = ["orchidea"]  
 
 [tool.setuptools.package-data]
-"orchidea" = ["*", "help/*"]  # Include all files inside upic folder and all files inside upic/help folder
+"orchidea" = ["*", "instruments/*", "help/*"] 
 
 [tool.black]
 line-length = 180
