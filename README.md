@@ -19,7 +19,7 @@
       - `sample`: get all samples that pass the filter setted;
       
 <p align="center">
-    <img src=resources/help.png>
+    <img width="80%" src=resources/help.png>
 </p>
         
 ## Install
