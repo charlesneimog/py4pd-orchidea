@@ -1,3 +1,0 @@
-#N canvas 1277 32 643 899 8;
-#X obj 14 10 py4pd -lib orchidea;
-#X obj 20 123 orchidea.flute;
